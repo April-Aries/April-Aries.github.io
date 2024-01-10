@@ -2227,11 +2227,29 @@ main >.inner {
   top: -10%;
   left: -10%;
 }
-.social .item.::before {
-  background-color: ;
+.social .item.github::before {
+  background-color: #57575c;
 }
-.social .item. i {
-  color: ;
+.social .item.github i {
+  color: #57575c;
+}
+.social .item.facebook::before {
+  background-color: #0066FF;
+}
+.social .item.facebook i {
+  color: #0066FF;
+}
+.social .item.youtube::before {
+  background-color: #FF0040;
+}
+.social .item.youtube i {
+  color: #FF0040;
+}
+.social .item.instagram::before {
+  background-color: nstagra;
+}
+.social .item.instagram i {
+  color: nstagra;
 }
 .social .item:focus i,
 .social .item:hover i {
