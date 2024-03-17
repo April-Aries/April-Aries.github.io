@@ -1,0 +1,475 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Luke's Blog" href="https://april-aries.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Luke's Blog" href="https://april-aries.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Luke's Blog" href="https://april-aries.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="CS" />
+
+
+<link rel="canonical" href="https://april-aries.github.io/2024/03/17/RTFG/">
+
+
+
+  
+  <title>
+成為資工系學生技能背包 0x01：RTFM & STFG |
+Luke's Blog</title>
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">成為資工系學生技能背包 0x01：RTFM & STFG
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="創建時間：2024-03-17 22:25:13">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">發表於</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-03-17T22:25:13+08:00">2024-03-17</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切換導航欄">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Luke's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/assets/Covers/CoverSTFG.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首頁</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-TW">
+  <link itemprop="mainEntityOfPage" href="https://april-aries.github.io/2024/03/17/RTFG/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Luke">
+    <meta itemprop="description" content="在資工系緊抓著浮木載浮載沉的人, Hi there!">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Luke's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <div class="note info">
+<p>關於成為資工系學生必會技能：什麼是 <strong>自學</strong></p>
+</div>
+<p><span id="more"></span></p>
+<p>這篇會跟大家分享自學這件事<br />
+幾個關鍵字如下：</p>
+<ol>
+<li>自學</li>
+<li>RTFM</li>
+<li>STFG</li>
+</ol>
+<p>至於為什麼會有這一篇？因為最近逛就業博覽會、準備履歷有點感觸，當然這份感觸也不是最近才有，只是覺得應該好好記錄下來</p>
+<p>它是我在資工系中覺得最重要的觀念</p>
+<h1 id="我想要快速學習的魔法"><a class="anchor" href="#我想要快速學習的魔法">#</a> 我想要快速學習的魔法</h1>
+<p>近期準備履歷多少都會看到很多公司在招募條件多加一行 <em>&quot;Being able to work independently and explore new area rapidly&quot;</em>，基本上就是希望招募一個能夠自學且快速掌握新知的人才，也不只是在公司、在學校會用到，這應該算是常態了，尤其資訊變化快速，能夠短時間掌握新技術並加以運用掯定是未來不可或缺的存在</p>
+<p>說起來很簡單，但我認為不是</p>
+<h1 id="不會就查這不是大家都知道嗎"><a class="anchor" href="#不會就查這不是大家都知道嗎">#</a> 不會就查，這不是大家都知道嗎？</h1>
+<p>嗯嗯沒錯！我相信所有人都知道「遇到不會的就查」的道理，但我也相信並不是所有人都會做到，因為對很多人，甚至大多數人而言，這就只是口號，喊一喊但沒有真的理解背後的意涵</p>
+<h2 id="用-chatgpt-來想想看"><a class="anchor" href="#用-chatgpt-來想想看">#</a> 用 ChatGPT 來想想看</h2>
+<p>2022 年 11 月 ChatGPT 降臨於這個世上，現在 2024 年 3 月，短短一年多的時間它已經成為我們依賴的工具，但回顧剛出現的前半年，會使用他的人又有多少？當時 ChatGPT 最大的特色就是可以使用自然語言跟他溝通，不用像先前的機器只有輸入特定指令才會有反應，縱使知道這項消息，很多人還是會說「可是我不知道怎麼用 ChatGPT」、「沒有人教我我不會用」，但如果願意把 ChatGPT 打開，試著隨便輸入一句話，就會知道就算 prompt 下的再怎麼爛，ChatGPT 還是有辦法回答，可能不夠到位，但還是有一些相關的解釋</p>
+<h2 id="我都知道就是沒有去試而已"><a class="anchor" href="#我都知道就是沒有去試而已">#</a> 我都知道，就是沒有去試而已</h2>
+<p>當然一定也有一群人是知道，但沒去試，覺得不用試，或某種程度上來說是不敢試</p>
+<p>不過這就是實踐的層面了，就像這邊標題定的：「不會就查，這不是大家都知道嗎？」，但現實生活中看到更多的是不會但我不願意查，其實滿諷刺的，尤其當大家都會把這句話掛在嘴邊卻做不到時</p>
+<h2 id="工程師就是魔法使"><a class="anchor" href="#工程師就是魔法使">#</a> 工程師就是魔法使</h2>
+<p>或許這也是為什麼在資工系待久了會覺得只要我想的到的事情，我就有能力也應該做出來，因為資工系的學生知道怎麼自學、知道怎麼找方法，也因為這樣似乎不能輕易地說不行、不會，因為比起很多人，資工系學生是一群很會使用工具的人</p>
+<p>結論：資工系學生都是魔法使，只要想像的到就能將其實現</p>
+<h1 id="rtfm-stfg"><a class="anchor" href="#rtfm-stfg">#</a> RTFM &amp; STFG</h1>
+<p>這兩個詞彙是從大一程式設計課堂聽到的，分別是 Read the f*#&amp;ing manual 和 Search the f*#&amp;ing Google</p>
+<p>當時的老師說了很重要的一番話，以前的老師會希望學生多問問題，因為以前的年代老師權威很大，通常都是老師在上面講，學生在底下聽，不太會有互動，後來教育發現這項問題，開始鼓勵學生多問問題，不要只是被動接收新知，才開啟了學子對於「要多問問題」的思維。但現今的社會又變了，多問問題是留給前一輩學生的要求，現在的學生應該去知道怎麼問「<mark><strong>聰明的問題</strong></mark>」，所謂聰明的問題應該是當你發現問題後，自己透過自己的能力去了解，並事前做過一些功課，還有問題才提出來的</p>
+<p>再舉個身邊非資訊領域的同學學習程式的例子，可以看出上面提到的一些事情</p>
+<blockquote>
+<p>同學 A：「我的程式又動不了了」<br />
+我：「這支 function 要幹嘛？」<br />
+同學 A：「就是把我的資料帶進去，它會幫我把圖畫出來」<br />
+我：「阿你的問題是？」<br />
+同學 A：「我帶進去了，但它跑出紅字，不知道是什麼問題」<br />
+我：「嗯。。Error message 說你少帶一個參數耶！你看 function 的定義有這一個啊你沒有寫進去？」</p>
+</blockquote>
+<p>從這邊應該就要意識到剛剛那個問題就是不好的問題，因為人家 error message 都寫出來了還不讀</p>
+<blockquote>
+<p>同學 A：「啊那個什麼？」<br />
+我：（我看起來怎麼像是會知道呢？）<br />
+我：「不知道耶！你應該看看這個 (document) 應該就知道了」<br />
+同學 A：（立刻）「啊那個我看不懂」</p>
+</blockquote>
+<p>這邊就看得出對於學習的心態差別，沒看就說看不懂是因為不想看而不是不會看</p>
+<h1 id="經驗談"><a class="anchor" href="#經驗談">#</a> 經驗談</h1>
+<p>最後小分享我自己的經驗</p>
+<p>上面講的冠冕堂皇，但我自己並不是一個多會運用工具、擅長自學的人，恰巧相反，我就是那種什麼事都希望別人教我、遇到不會的事情很常直接忽略，覺得這與我無關的人，因此我也還在努力適應這種獨立的生活</p>
+<p>高中進到二類是開啟這個開關的契機。以前看老師上課需要音源線、VGA 線，其時我也不知道那是什麼，但也不會去了解，只知道不要當資訊股長就不會被問到這些事情。這種心態其實一路被身邊同學唸到畢業，因為當時的我只會一味的逃避那些我不知道的事情，只要我不知道就覺得離我很遙遠，就習慣性地忽略他，覺得就算不知道也不會怎麼樣，甚至到了高三選填志願，對於一個系所的了解大多都停留在系所名稱，很少真的點進去看該科系所學，就像點進資工看修課地圖看到資料結構、演算法，也都不知道是什麼，甚至覺得演算法就是教我們怎麼像 YouTube 一樣推送用戶喜歡的影片，直到進入大學才知道原來資料結構是探討儲存資料的方式、演算法是探討如何解題方法與步驟，結合這兩種技巧來有效率的解決問題。但因為有一群好朋友時時刻刻提醒著我這個問題，那兩年才會有所進步，才會去慢慢「看」這個世界有趣的地方，對各種事物產生好奇心，去試著了解他們</p>
+<p>大學聽到 RTFM 和 STFG 的觀念時，就覺得又是很熟悉的東西，也才意識到原來高中被唸的事情是多嚴重，或許是慶幸的，如果沒有高中那一段，大學要我做到 RTFM 跟 STFG 會更難。雖然一路上我還是曾經迷失在不知道如何問問題上，覺得資工系學生連問問題的權力都被剝奪了，但現在的我會說這是必經之路，也只有這樣才會體認到自己能做到的事情其實很多，遠超過自己想像</p>
+<p>我遇過一個人，他很特別，在他身邊我是時時刻刻都在吸收新的小知識，有些是沒有用的，有些是影響很大的，但很深刻地感受到這個人懂很多，也因此很欽佩他。我跟他最大的差別並不是在於自學的能力，而是在對事情的興趣，他可以看到一件事情，發現有趣的點就開始鑽研，而且是深入的鑽研，去了解這件事情；但我不一樣，在對一件事情有興趣前我會去衡量時間成本，覺得可能要投入太多時間就不做，漸漸就忘記探索一件新事物的樂趣，變成被動接收者。會說這個是因為我認為如果要能做到願意去主動自學，應該是在對那件事情提得起興趣的情況下，但很多人不學、不查或許就是因為這些事情對我而言可有可無，所以選擇放棄</p>
+<p>喔對！那個人就是一路上一直唸我的人</p>
+<p>最後，我相信看到這邊的有些人還是會覺得這沒什麼，這早就理解了，你想的沒錯，或許你是早就理解這種觀念的人，那你很棒也很幸福！不過如果你是還沒意識到問題的人，希望這篇有幫助到你發現一個未來世界中不可或缺的能力</p>
+<p>謹以這篇文章，送給還在高中的學弟妹們，特別是想往資訊領域發展的，因為這是需要提早體認到的事實</p>
+<blockquote>
+<p>References:<br />
+<span class="exturl" data-url="aHR0cDovL3d3dy5jYXRiLm9yZy9+ZXNyL2ZhcXMvc21hcnQtcXVlc3Rpb25zLmh0bWw=">How to Ask Question the Smart Way?</span><br />
+Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2E9aSZhbXA7dXJsPWh0dHBzJTNBJTJGJTJGZW4ud2lraXBlZGlhLm9yZyUyRndpa2klMkZDb21wdXRlcl9zY2llbmNlX2FuZF9lbmdpbmVlcmluZyZhbXA7cHNpZz1BT3ZWYXcyNEpaa0VjUkFvRHk0Q0R6MXpyVS1nJmFtcDt1c3Q9MTcxMDc2Mzg3NzgxNTAwMCZhbXA7c291cmNlPWltYWdlcyZhbXA7Y2Q9dmZlJmFtcDtvcGk9ODk5Nzg0NDkmYW1wO3ZlZD0wQ0JNUWpSeHFGd29UQ0tqdDVadWktNFFERlFBQUFBQWRBQUFBQUJBRQ==">here</span></p>
+</blockquote>
+
+      <div class="tags">
+          <a href="/tags/CS/" rel="tag"><i class="ic i-tag"></i> CS</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>作者： </strong>Luke <i class="ic i-at"><em>@</em></i>Luke's Blog
+  </li>
+  <li class="link">
+    <strong>文章連結：</strong>
+    <a href="https://april-aries.github.io/2024/03/17/RTFG/" title="成為資工系學生技能背包 0x01：RTFM &amp; STFG">https://april-aries.github.io/2024/03/17/RTFG/</a>
+  </li>
+  <li class="license">
+    <strong>版權聲明： </strong>本 blog 所有文章除特別聲明外，均採用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 許可協議。複製請註明出處！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2024/01/31/SemesterReview/SemesterReview1121/" itemprop="url" rel="prev" data-background-image="&#x2F;assets&#x2F;Covers&#x2F;CoverReview.jpg" title="112-1 學期回顧">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 學期回顧</span>
+  <h3>112-1 學期回顧</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目錄">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%88%91%E6%83%B3%E8%A6%81%E5%BF%AB%E9%80%9F%E5%AD%B8%E7%BF%92%E7%9A%84%E9%AD%94%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> 我想要快速學習的魔法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%8D%E6%9C%83%E5%B0%B1%E6%9F%A5%E9%80%99%E4%B8%8D%E6%98%AF%E5%A4%A7%E5%AE%B6%E9%83%BD%E7%9F%A5%E9%81%93%E5%97%8E"><span class="toc-number">2.</span> <span class="toc-text"> 不會就查，這不是大家都知道嗎？</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8-chatgpt-%E4%BE%86%E6%83%B3%E6%83%B3%E7%9C%8B"><span class="toc-number">2.1.</span> <span class="toc-text"> 用 ChatGPT 來想想看</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%91%E9%83%BD%E7%9F%A5%E9%81%93%E5%B0%B1%E6%98%AF%E6%B2%92%E6%9C%89%E5%8E%BB%E8%A9%A6%E8%80%8C%E5%B7%B2"><span class="toc-number">2.2.</span> <span class="toc-text"> 我都知道，就是沒有去試而已</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E7%A8%8B%E5%B8%AB%E5%B0%B1%E6%98%AF%E9%AD%94%E6%B3%95%E4%BD%BF"><span class="toc-number">2.3.</span> <span class="toc-text"> 工程師就是魔法使</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rtfm-stfg"><span class="toc-number">3.</span> <span class="toc-text"> RTFM &amp; STFG</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B6%93%E9%A9%97%E8%AB%87"><span class="toc-number">4.</span> <span class="toc-text"> 經驗談</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="該系列文章">
+      </div>
+      <div class="overview panel" data-title="About">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Luke"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Luke</p>
+  <div class="description" itemprop="description">Hi there!</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">4</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分類</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">5</span>
+        <span class="name">標籤</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FwcmlsLUFyaWVz" title="https:&#x2F;&#x2F;github.com&#x2F;April-Aries"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOmx1a2UwNDE1MTBAZ21haWwuY29t" title="mailto:luke041510@gmail.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item facebook" data-url="aHR0cHM6Ly9mYWNlYm9vay5jb20vcHJvZmlsZS5waHA/aWQ9MTAwMDI3MjE4NDMzMzQ5" title="https:&#x2F;&#x2F;facebook.com&#x2F;profile.php?id&#x3D;100027218433349"><i class="ic i-facebook"></i></span>
+      <span class="exturl item youtube" data-url="aHR0cHM6Ly93d3cueW91dHViZS5jb20vQGJveXVjaGVuMzEzNg==" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;@boyuchen3136"><i class="ic i-youtube"></i></span>
+      <span class="exturl item instagram" data-url="aHR0cHM6Ly9pbnN0YWdyYW0uY29tL2x1a2UuMDQxOQ==" title="https:&#x2F;&#x2F;instagram.com&#x2F;luke.0419"><i class="ic i-instagram"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首頁</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>關於</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>歸檔</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分類</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>標籤</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>隨機文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分類於 Blog">Blog</a>
+</div>
+
+    <span><a href="/2024/01/12/blog/AboutThisBlog/" title="About This Blog">About This Blog</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SemesterReview/" title="分類於 學期回顧">學期回顧</a>
+</div>
+
+    <span><a href="/2024/01/31/SemesterReview/SemesterReview1121/" title="112-1 學期回顧">112-1 學期回顧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2024/03/17/RTFG/" title="成為資工系學生技能背包 0x01：RTFM &amp; STFG">成為資工系學生技能背包 0x01：RTFM & STFG</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分類於 Blog">Blog</a>
+</div>
+
+    <span><a href="/2024/01/14/blog/BuildYourBlog01/" title="How To Build Your Own Blog Chapter 1：Blueprint">How To Build Your Own Blog Chapter 1：Blueprint</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新評論</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Luke @ Luke's Blog</span>
+  </div>
+  <div class="powered-by">
+    感謝 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span> 提供的模板
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2024/03/17/RTFG/',
+    favicon: {
+      show: "(ゝ∀･)b耶",
+      hide: "Σ( ° △ °)快回來"
+    },
+    search : {
+      placeholder: "文章搜尋",
+      empty: "關於 「 ${query} 」，什麼也沒找到",
+      stats: "${time} ms 內找到 ${hits} 條結果"
+    },
+    valine: true,fancybox: true,
+    copyright: '複製成功，請遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 協議。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
