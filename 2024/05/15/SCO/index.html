@@ -1,0 +1,508 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Luke's Blog" href="https://april-aries.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Luke's Blog" href="https://april-aries.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Luke's Blog" href="https://april-aries.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="Metaheuristics,Algorithms" />
+
+
+<link rel="canonical" href="https://april-aries.github.io/2024/05/15/SCO/">
+
+
+
+  
+  <title>
+Social Cognitive Optimization |
+Luke's Blog</title>
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">Social Cognitive Optimization
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="創建時間：2024-05-15 23:19:45">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">發表於</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-05-15T23:19:45+08:00">2024-05-15</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切換導航欄">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Luke's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/assets/Covers/CoverSCO.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首頁</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-TW">
+  <link itemprop="mainEntityOfPage" href="https://april-aries.github.io/2024/05/15/SCO/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Luke">
+    <meta itemprop="description" content="在資工系緊抓著浮木載浮載沉的人, Hi there!">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Luke's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <div class="note info">
+<p>當龐克輯錄成為學術中的一環？</p>
+</div>
+<p><span id="more"></span></p>
+<p>這篇會跟大家分享自學這件事<br />
+幾個關鍵字如下：</p>
+<ol>
+<li>（元）啟發式演算法 (Metaheuristics)</li>
+<li>社會認知算法 (Social Cognitive Optimization, SCO)</li>
+</ol>
+<p>先來說一下我跟它的初識：因為宗哲老師這學期【啟發式演算法的解題與應用】課程期末專題需求，我們這組選了一個「使用元啟發式演算法設計對稱式加密系統」的題目，原 paper 使用常見的模擬退火法 (Simulated annealing, SA) 和基因演算法 (Genetic algorithm, GA) 實作，如果繼續調整參數做實驗似乎感覺不會得到更好的結果（畢竟人家都提出來這樣了，肯定是經過實驗過的，而且前幾次作業很明顯的告訴我們對於調整參數的技能點數是 0，所以無職轉生成調參工程師還是先等等），於是我們打算三個人一人使用一套沒聽過的演算法來實驗能不能做得更好，至少還能學到其他啟發式演算法，之後跟大家分享也不錯！</p>
+<p>元啟發式演算法常見的就是把各種動物抓過來研究，比方說人工蜂群演算法 (Artificial bee colony, ABC)、蟻群演算法 (Ant colony optimization, ACO) 都很常見，有了這些基礎之後學界就慢慢誕生其他各式各樣的演算法，比如說飛蛾、鯊魚、蚯蚓、帝王企鵝、抹香鯨算法等等，<s>會發現動物明開始聚焦了</s></p>
+<p>正當選擇障礙症出現的時候突然在維基突然瞄到兩個看似很有趣又與眾不同的演算法，一個是人類精神搜索算法 (Human mental search, HMS)，另一個就是社會認知算法 (Social Cognitive Optimization, SCO)，立刻吸引我的興趣，其實我是對 HMS 比較感興趣的，但了解之後發現 HMS 是建構在「競標」的場景，裡面也用到很多暫時還不會的東西，例如 Levy flight，所以就先跟它說掰掰，撿起第二喜歡的 SCO</p>
+<p>有修教程的不要害怕，整篇不會出現皮亞傑，你的擔憂我也曾經想過，但 SCO 沒有！</p>
+<h1 id="什麼是社會認知算法"><a class="anchor" href="#什麼是社會認知算法">#</a> 什麼是社會認知算法</h1>
+<p>所以什麼是 SCO？這部分我覺得最近的航海王說明得很好</p>
+<p>&lt;圖還在找&gt;</p>
+<p>從漫畫中可以看到：貝加龐克博士的分靈體（抱歉錯棚了，是分身）雖然彼此獨立，但因為每天都會把記憶、學習到的東西放進龐克輯錄，所以隔天所有分身都能拿到這份資料，這樣即便沒有親身經歷過，別人的經驗也會變成我的經驗，是一個很逆天的技能！按照這個想法，如果我也創造九個分身，然後現在開始跟分身們努力工作一年，明年就可以說「我是擁有十年資歷的資深工程師」</p>
+<p>在正式介紹 SCO 之前先來介紹一些專有名詞：</p>
+<ol>
+<li>知識點 (knowledge point)：解空間中的一個解就是一個知識點，當然會有對應的知識含量 (fitness value)，可以想成圖書館中的每一本書</li>
+<li>知識集 (library)：一群知識點構成的群體，可以想成龐克輯錄或是圖書館</li>
+<li>主體 (learning agent)：一般人，但每個人手上都可以握有一個在知識集的知識點，這邊要注意主體不是一個知識點，而是握有知識點的容器（說容器怪怪的就是了）</li>
+</ol>
+<p>最後，SCO 的故事是這樣的：在這個世界上有很多知識點，一開始我們先組成 N_c 人的研究小組，要在 T 個週期內盡量從知識集和我們的研究中找出含金量最高的知識點，概念很簡單，接著就來看這套機制會經歷那些事件。</p>
+<h1 id="sco-流程"><a class="anchor" href="#sco-流程">#</a> SCO 流程</h1>
+<p>這個章節來說明 SCO 的步驟，用個清單來看會長這樣：</p>
+<ul>
+<li>初始化</li>
+<li>學習週期
+<ul>
+<li>主體認知
+<ul>
+<li>榜樣選擇</li>
+<li>質量衡量</li>
+<li>社會學習</li>
+<li>知識反饋</li>
+<li>知識更新</li>
+</ul>
+</li>
+<li>知識集維護</li>
+</ul>
+</li>
+<li>結束</li>
+</ul>
+<h2 id="初始化-initiaization"><a class="anchor" href="#初始化-initiaization">#</a> 初始化 Initiaization</h2>
+<p>首先我們要初始化，初始化分成兩部分</p>
+<p>一是要初始化圖書館，我們必須把圖書館的館藏建立好，並標記好它的知識含量，這邊假設館藏有 N_{pop} 本<br />
+二是要初始化主體，我們要讓每個人手上都握有一個知識點，代表他們目前會的東西</p>
+<h2 id="學習週期-learning-cycles"><a class="anchor" href="#學習週期-learning-cycles">#</a> 學習週期 Learning Cycles</h2>
+<p>接著是啟發式演算法都有共通的假設：資源有限，所以在有限的資源內我能找到多好的解。以 SCO 而言，它會定義學習週期為 T，經過 T 個週期之後就要回傳最好的知識點。當然這邊其實就是一個 stopping criteria，如果想用其他例如 times of fitness calls 也沒問題</p>
+<h3 id="主體認知-victarious-learning"><a class="anchor" href="#主體認知-victarious-learning">#</a> 主體認知 Victarious Learning</h3>
+<p>這邊開始描述每一個主體 x_i (t) 每一輪週期會做的事情，也就是說這個 learning agent 到底是怎麼學習的</p>
+<h4 id="榜樣選擇-model-selection"><a class="anchor" href="#榜樣選擇-model-selection">#</a> 榜樣選擇 Model Selection</h4>
+<p>首先是榜樣選擇，他會去 library 撈 TAU_B 本書出來看，從中選擇最好的（高質量知識點）那本 model 做為榜樣</p>
+<h4 id="質量衡量-quality-evaluation"><a class="anchor" href="#質量衡量-quality-evaluation">#</a> 質量衡量 Quality Evaluation</h4>
+<p>再來要去衡量主體跟榜樣誰比較好，比較好的那個我們叫他 base，會是等等做研究的基礎，另一個比較差的就會是 ref，也就是拿來參考而已</p>
+<h4 id="社會學習-learning"><a class="anchor" href="#社會學習-learning">#</a> 社會學習 Learning</h4>
+<p>學習就是在做研究，會無中生有產生一個新的知識點 x_i (t+1)，這個新解會透過 base 和 ref 得到，我們會以 base 作為基準，看 ref 跟 base 的差異多大決定要產生怎麼樣的新解</p>
+<h4 id="知識反饋-knowledge-sharing"><a class="anchor" href="#知識反饋-knowledge-sharing">#</a> 知識反饋 Knowledge Sharing</h4>
+<p>新的知識點 aka 研究成果就應該提交至 conference 或 journal 被收錄在圖書館館藏中，這邊也不例外，所以我們會把新知識點放進圖書館</p>
+<h4 id="知識更新-knowledge-update"><a class="anchor" href="#知識更新-knowledge-update">#</a> 知識更新 Knowledge Update</h4>
+<p>再來因為主體都研究出一個新知識了，沒道理拿著就知識不放手，所以我們會把主體手上拿的知識點 x_i (t) 換成新知識點 x_i (t+1)，注意這邊就知識點還在，因為它存在於圖書館中，只是主體手上拿的變其他知識而已</p>
+<h3 id="知識集維護-library-refreshment"><a class="anchor" href="#知識集維護-library-refreshment">#</a> 知識集維護 Library Refreshment</h3>
+<p>在每個主體經過一個週期 t 都做了一番研究後，圖書館館藏多了 N_c 本，可是圖書館大小有限，所以最後我們會對館藏進行篩選，把多出來的那些館藏藏淘汰掉，就像圖書館會把舊書拿出去送人。這邊可以注意淘汰的書一定是比較沒有價值的，也就是知識含量較低的知識點</p>
+<h2 id="結束-termination"><a class="anchor" href="#結束-termination">#</a> 結束 Termination</h2>
+<p>最後最後，在所有學習歷程都結束之後，就可以回傳最好的知識點是誰了</p>
+<h1 id="總結"><a class="anchor" href="#總結">#</a> 總結</h1>
+<p>那麼 SCO 到底可以看過多少解呢？答案是 N_{pop} + T * N_c，所以會發現研究小組有多少人在 T 比較長的時候反而是重點，跟 GA 某種程度來說差不多</p>
+<p>對 SCO 有興趣的人可以去 Reference 找原論文，這邊只是用很簡單的想法介紹 SCO 是什麼，當然內容還會再更新，畢竟這是深夜寫出來的東西。。</p>
+<blockquote>
+<p>References:<br />
+<span class="exturl" data-url="aHR0cHM6Ly9pZWVleHBsb3JlLmllZWUub3JnL2Fic3RyYWN0L2RvY3VtZW50LzExNzQ0ODc=">SOCIAL COGNITIVE OPTIMIZATION FOR NONLINEAR PROGRAMMING PROBLEMS</span><br />
+Xiao-Feng Xie, Wen-Jun Zhang and Zhi-Lian Yang, &quot;Social cognitive optimization for nonlinear programming problems,&quot; Proceedings. International Conference on Machine Learning and Cybernetics, Beijing, China, 2002, pp. 779-783 vol.2, doi: 10.1109/ICMLC.2002.1174487.<br />
+Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2E9aSZhbXA7dXJsPWh0dHAlM0ElMkYlMkZpbnNpZ2h0c3dpdGhpbXBhY3Qub3JnJTJGMjAyMyUyRjAyJTJGMjYlMkZiZW5jaG1hcmstZm9yLWlubm92YXRpb24lMkYmYW1wO3BzaWc9QU92VmF3MEx0VTZyTmpjRjh0Y0tQVkVucHFEZiZhbXA7dXN0PTE3MTU4NzcyMTEyNzMwMDAmYW1wO3NvdXJjZT1pbWFnZXMmYW1wO2NkPXZmZSZhbXA7b3BpPTg5OTc4NDQ5JmFtcDt2ZWQ9MENCSVFqUnhxRndvVENNaTdpNnlMa0lZREZRQUFBQUFkQUFBQUFCQUU=">here</span></p>
+</blockquote>
+
+      <div class="tags">
+          <a href="/tags/Metaheuristics/" rel="tag"><i class="ic i-tag"></i> Metaheuristics</a>
+          <a href="/tags/Algorithms/" rel="tag"><i class="ic i-tag"></i> Algorithms</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新於</span>
+    <time title="修改時間：2024-05-16 00:41:10" itemprop="dateModified" datetime="2024-05-16T00:41:10+08:00">2024-05-16</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>作者： </strong>Luke <i class="ic i-at"><em>@</em></i>Luke's Blog
+  </li>
+  <li class="link">
+    <strong>文章連結：</strong>
+    <a href="https://april-aries.github.io/2024/05/15/SCO/" title="Social Cognitive Optimization">https://april-aries.github.io/2024/05/15/SCO/</a>
+  </li>
+  <li class="license">
+    <strong>版權聲明： </strong>本 blog 所有文章除特別聲明外，均採用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 許可協議。複製請註明出處！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2024/03/17/RTFG/" itemprop="url" rel="prev" data-background-image="&#x2F;assets&#x2F;Covers&#x2F;CoverSTFG.jpg" title="成為資工系學生技能背包 0x01：RTFM &amp; STFG">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>成為資工系學生技能背包 0x01：RTFM & STFG</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目錄">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF%E7%A4%BE%E6%9C%83%E8%AA%8D%E7%9F%A5%E7%AE%97%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> 什麼是社會認知算法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#sco-%E6%B5%81%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text"> SCO 流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96-initiaization"><span class="toc-number">2.1.</span> <span class="toc-text"> 初始化 Initiaization</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%B8%E7%BF%92%E9%80%B1%E6%9C%9F-learning-cycles"><span class="toc-number">2.2.</span> <span class="toc-text"> 學習週期 Learning Cycles</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E9%AB%94%E8%AA%8D%E7%9F%A5-victarious-learning"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 主體認知 Victarious Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%9C%E6%A8%A3%E9%81%B8%E6%93%87-model-selection"><span class="toc-number">2.2.1.1.</span> <span class="toc-text"> 榜樣選擇 Model Selection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B3%AA%E9%87%8F%E8%A1%A1%E9%87%8F-quality-evaluation"><span class="toc-number">2.2.1.2.</span> <span class="toc-text"> 質量衡量 Quality Evaluation</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BE%E6%9C%83%E5%AD%B8%E7%BF%92-learning"><span class="toc-number">2.2.1.3.</span> <span class="toc-text"> 社會學習 Learning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AD%98%E5%8F%8D%E9%A5%8B-knowledge-sharing"><span class="toc-number">2.2.1.4.</span> <span class="toc-text"> 知識反饋 Knowledge Sharing</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%A5%E8%AD%98%E6%9B%B4%E6%96%B0-knowledge-update"><span class="toc-number">2.2.1.5.</span> <span class="toc-text"> 知識更新 Knowledge Update</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A5%E8%AD%98%E9%9B%86%E7%B6%AD%E8%AD%B7-library-refreshment"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 知識集維護 Library Refreshment</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B5%90%E6%9D%9F-termination"><span class="toc-number">2.3.</span> <span class="toc-text"> 結束 Termination</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B8%BD%E7%B5%90"><span class="toc-number">3.</span> <span class="toc-text"> 總結</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="該系列文章">
+      </div>
+      <div class="overview panel" data-title="About">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Luke"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Luke</p>
+  <div class="description" itemprop="description">Hi there!</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">5</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">2</span>
+        <span class="name">分類</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">7</span>
+        <span class="name">標籤</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FwcmlsLUFyaWVz" title="https:&#x2F;&#x2F;github.com&#x2F;April-Aries"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOmx1a2UwNDE1MTBAZ21haWwuY29t" title="mailto:luke041510@gmail.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item facebook" data-url="aHR0cHM6Ly9mYWNlYm9vay5jb20vcHJvZmlsZS5waHA/aWQ9MTAwMDI3MjE4NDMzMzQ5" title="https:&#x2F;&#x2F;facebook.com&#x2F;profile.php?id&#x3D;100027218433349"><i class="ic i-facebook"></i></span>
+      <span class="exturl item youtube" data-url="aHR0cHM6Ly93d3cueW91dHViZS5jb20vQGJveXVjaGVuMzEzNg==" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;@boyuchen3136"><i class="ic i-youtube"></i></span>
+      <span class="exturl item instagram" data-url="aHR0cHM6Ly9pbnN0YWdyYW0uY29tL2x1a2UuMDQxOQ==" title="https:&#x2F;&#x2F;instagram.com&#x2F;luke.0419"><i class="ic i-instagram"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首頁</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>關於</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>歸檔</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分類</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>標籤</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>隨機文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分類於 Blog">Blog</a>
+</div>
+
+    <span><a href="/2024/01/12/blog/AboutThisBlog/" title="About This Blog">About This Blog</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SemesterReview/" title="分類於 學期回顧">學期回顧</a>
+</div>
+
+    <span><a href="/2024/01/31/SemesterReview/SemesterReview1121/" title="112-1 學期回顧">112-1 學期回顧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2024/05/15/SCO/" title="Social Cognitive Optimization">Social Cognitive Optimization</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2024/03/17/RTFG/" title="成為資工系學生技能背包 0x01：RTFM &amp; STFG">成為資工系學生技能背包 0x01：RTFM & STFG</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分類於 Blog">Blog</a>
+</div>
+
+    <span><a href="/2024/01/14/blog/BuildYourBlog01/" title="How To Build Your Own Blog Chapter 1：Blueprint">How To Build Your Own Blog Chapter 1：Blueprint</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新評論</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Luke @ Luke's Blog</span>
+  </div>
+  <div class="powered-by">
+    感謝 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span> 提供的模板
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2024/05/15/SCO/',
+    favicon: {
+      show: "(ゝ∀･)b耶",
+      hide: "Σ( ° △ °)快回來"
+    },
+    search : {
+      placeholder: "文章搜尋",
+      empty: "關於 「 ${query} 」，什麼也沒找到",
+      stats: "${time} ms 內找到 ${hits} 條結果"
+    },
+    valine: true,fancybox: true,
+    copyright: '複製成功，請遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 協議。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
