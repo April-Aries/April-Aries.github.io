@@ -1,0 +1,682 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Luke's Blog" href="https://april-aries.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Luke's Blog" href="https://april-aries.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Luke's Blog" href="https://april-aries.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="資安" />
+
+
+<link rel="canonical" href="https://april-aries.github.io/2024/10/19/NIST800-63-4/">
+
+
+
+  
+  <title>
+NIST 800-63-4 SP 800-63B Section 3.1 - 新知 |
+Luke's Blog</title>
+<meta name="generator" content="Hexo 7.0.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">NIST 800-63-4 SP 800-63B Section 3.1
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="創建時間：2024-10-19 13:26:24">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">發表於</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-10-19T13:26:24+08:00">2024-10-19</time>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切換導航欄">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Luke's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/assets/Covers/CoverNIST800-63B.png">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首頁</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%96%B0%E7%9F%A5/" itemprop="item" rel="index" title="分類於 新知"><span itemprop="name">新知</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-TW">
+  <link itemprop="mainEntityOfPage" href="https://april-aries.github.io/2024/10/19/NIST800-63-4/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Luke">
+    <meta itemprop="description" content="在資工系緊抓著浮木載浮載沉的人, Hi there!">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Luke's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="prologue"><a class="anchor" href="#prologue">#</a> Prologue</h1>
+<p>近期實習的資安小文章都在做密碼管理，先是密碼管理器，再是無密碼機制 FIDO，交付的時候 Elisa 剛好看到一篇有關 PCHOME 疑似遭到撞庫攻擊的新聞，就問我要不要順便補個時事上 FIDO 那篇（不過目前也沒確定 PCHOME 是不是真的遭到撞庫攻擊，所以沒有真的寫上去，相關資訊可以看<span class="exturl" data-url="aHR0cHM6Ly93d3cuaXRob21lLmNvbS50dy9uZXdzLzE2NTM0Nw==">這篇</span>說明），但我的認知中撞庫攻擊是因為使用者懶的記憶太多組密碼所以只拿同一組密碼打天下，才讓壞人有機會到處撞來撞去就入侵一堆該用戶名下的帳戶，又很剛好的 NIST 在八月底九月初提出了新一版的數位身分指南 (<span class="exturl" data-url="aHR0cHM6Ly9wYWdlcy5uaXN0Lmdvdi84MDAtNjMtNC8=">Digital Identity Guidelines</span>)，就問 Elisa 要不要順便把這篇整理起來當作下一篇資安小文章，於是就誕生了這篇新知分享，畢竟資安小文章對於字數、篇幅都有限制，在這邊可以恣意的撰寫 XD</p>
+<p>這篇比較會用參照本文結合一些我自己的想法來記錄，不想看那麼多的可以滑到最下面看重點總整理，或是直接看中文的部分</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9wYWdlcy5uaXN0Lmdvdi84MDAtNjMtNC8=">NIST SP 800-63 Digital Identity Guidelines</span> 並不是單純針對「什麼是安全密碼」進行規範，先來看看本文怎麼說</p>
+<blockquote>
+<p>These guidelines cover identity proofing and authentication of users (such as employees, contractors, or private individuals) interacting with government information systems over networks. They define technical requirements in each of the areas of identity proofing, registration, authenticators, management processes, authentication protocols, federation, and related assertions. They also offer technical recommendations and other informative text intended as helpful suggestions. The guidelines are not intended to constrain the development or use of standards outside of this purpose. This publication supersedes NIST Special Publication (SP) 800-63-3.</p>
+</blockquote>
+<p>也就是說這份指南包含對用戶的身分證明、身分驗證進行規範，而用戶的定義包括使用網路與政府資訊系統進行互動的員工、承包商、個人。規範內容包含身分證明、註冊、驗證、管理等等，除了規範外，這份指南也有提供一些技術上的建議，不過對於與政府互動以外的地方，並沒有限制用戶一定要完全遵照這份指南</p>
+<p>雖然 NIST 的這份指南涵蓋範圍很廣，但這篇新知分享會著重在「什麼是安全的密碼」</p>
+<h1 id="authentication-assurance-levels-aal"><a class="anchor" href="#authentication-assurance-levels-aal">#</a> Authentication Assurance Levels (AAL)</h1>
+<p>進到正題之前，我覺得有必要討論一下在 NIST SP 800-63B 提到的身分驗證保證等級，</p>
+<h2 id="aal1"><a class="anchor" href="#aal1">#</a> AAL1</h2>
+<blockquote>
+<p>AAL1 provides <strong>basic confidence</strong> that the claimant controls an authenticator bound to the subscriber account being authenticated. AAL1 requires only single-factor authentication using a wide range of available authentication technologies. However, it is recommended that applications assessed at AAL1 offer multi-factor authentication options. Successful authentication requires that the claimant prove possession and control of the authenticator.</p>
+</blockquote>
+<p>第一級也是對機密性要求最基本的層級，驗證方式只要單一驗證即可，但 NIST 仍推薦使用多因子驗證，主要驗證因子在驗證其擁有性，允許驗證器類別包含下列幾種：</p>
+<ul>
+<li>Password：使用者自行選擇並<strong>記憶</strong>的 token</li>
+<li>Look-up secret：從使用者持有的清單中尋找提示值決定</li>
+<li>Out-of-band device：透過一條特殊通道來進行驗證</li>
+<li>Single factor OTP：透過使用者持有的設備進行一次性密碼驗證</li>
+<li>Multi-factor OTP：透過使用者持有的設備進行一次性密碼驗證，但在此之前須經過其他驗證因子 (2FA, MFA)</li>
+<li>Single-factor cryptographic authentication：透過加密金鑰進行驗證</li>
+<li>Multi-factor cryptographic authentication：透過加密金鑰進行驗證，但在取得金鑰前須經過其他驗證因子 (2FA, MFA)</li>
+</ul>
+<h2 id="aal2"><a class="anchor" href="#aal2">#</a> AAL2</h2>
+<blockquote>
+<p>AAL2 provides <strong>high confidence</strong> that the claimant controls one or more authenticators bound to the subscriber account being authenticated. Proof of the possession and control of two distinct authentication factors is required. Applications assessed at AAL2 must offer a phishing-resistant authentication option.</p>
+</blockquote>
+<p>第二級的機密性較高，驗證方式需要多重驗證，且必須防止網路釣魚，驗證因子則是在驗證擁有性與是否具有兩種不同的身分驗證因子。允許驗證器類別如下</p>
+<ul>
+<li>Multi-factor authenticator
+<blockquote>
+<p>可以再添加下列機制</p>
+</blockquote>
+<ul>
+<li>Multi-factor Out-of-band authenticator</li>
+<li>Multi-factor OTP</li>
+<li>Multi-factor cryptographic authentication</li>
+</ul>
+</li>
+<li>Combination of two single-factor authenticators
+<blockquote>
+<p>Combination 還要 password 和一個實體驗證器 (something you have)</p>
+</blockquote>
+<ul>
+<li>Look-up secret</li>
+<li>Out-of-band device</li>
+<li>Single-factor OTP</li>
+<li>Single-factor cryptographic authentication</li>
+</ul>
+</li>
+</ul>
+<h2 id="aal3"><a class="anchor" href="#aal3">#</a> AAL3</h2>
+<blockquote>
+<p>AAL3 provides <strong>very high confidence</strong> that the claimant controls one or more authenticators bound to the subscriber account being authenticated. Authentication at AAL3 is based on the proof of possession of a key through the use of a public-key cryptographic protocol. AAL3 authentication requires a hardware-based authenticator with a non-exportable private key and a phishing-resistant authenticator (see Sec. 3.2.5); the same device may fulfill both requirements. To authenticate at AAL3, claimants are required to prove possession and control of two distinct authentication factors.</p>
+</blockquote>
+<p>第三級機密性極高，驗證方式要求透過公開金鑰加密協定證明擁有金鑰、基於硬體的身分驗證器、不可匯出私鑰，且仍需防止網路釣魚，驗證因子仍為證明其擁有性與具備兩種不同身分驗證因子。允許驗證器類別為以確認安全的密碼系統</p>
+<h1 id="authenticator-and-verifier-requirements"><a class="anchor" href="#authenticator-and-verifier-requirements">#</a> Authenticator and Verifier Requirements</h1>
+<p>在 Section 3 的部分，NIST 開始說明到對於驗證器的要求，不過原文中會以這些詞彙區分規範嚴謹程度，程度由高至低如下：</p>
+<p>💡 要求階級定義</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">要求階級定義</th>
+<th style="text-align:left">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>SHALL / SHALL NOT</strong></td>
+<td style="text-align:left">嚴格遵守，不允許偏離</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>SHOULD / SHOULD NOT</strong></td>
+<td style="text-align:left">幾種可能性中被推薦的</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>MAY / NEED NOT</strong></td>
+<td style="text-align:left">不鼓勵，不禁止，只要按照規則上說的走就好</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>CAN / CAN NOT</strong></td>
+<td style="text-align:left">因為一些實質或邏輯上的原因所以可以或不行這樣做</td>
+</tr>
+</tbody>
+</table>
+<h2 id="31-requirements-by-authenticator-type"><a class="anchor" href="#31-requirements-by-authenticator-type">#</a> 3.1 Requirements by Authenticator Type</h2>
+<h3 id="311-password"><a class="anchor" href="#311-password">#</a> 3.1.1 Password</h3>
+<blockquote>
+<p>A password (sometimes referred to as a passphrase or, if numeric, a PIN) is a secret value intended to be chosen and either memorized or recorded by the subscriber. Passwords must be of sufficient complexity and secrecy that it would be impractical for an attacker to guess or otherwise discover the correct secret value. <strong>A password is “something you know”.</strong></p>
+</blockquote>
+<p>NIST 在這邊說到 password 表示「你知道」，而不是「你是誰」</p>
+<blockquote>
+<p>Passwords SHALL either be chosen by the subscriber or assigned randomly by the CSP.</p>
+</blockquote>
+<p>密碼應該是使用者自己選擇的或是 CSP 隨機產生的</p>
+<ul>
+<li>使用者自己選擇的：他應該要知道</li>
+<li>CSP 隨機產生的：CSP 應該要知道</li>
+</ul>
+<blockquote>
+<p>If the CSP disallows a chosen password because it is on a blocklist of commonly used, expected, or compromised values (see Sec. 3.1.1.2), the subscriber SHALL be required to choose a different password. Other complexity requirements for passwords SHALL NOT be imposed. A rationale for this is presented in Appendix A, Strength of Passwords.</p>
+</blockquote>
+<p>CSP 可以因為用戶使用常見的或容易猜測的密碼而拒絕該組密碼，此時用戶應該重新提交一組密碼，但 CPS 不能基於複雜度要求施加其他限制，例如：請輸入包含英文大小寫、數字、特殊符號 blablabla</p>
+<p>3.1.1.2 Password Verifiers</p>
+<blockquote>
+<p>Verifiers and CSPs SHALL require passwords to be a minimum of eight characters in length and SHOULD require passwords to be a minimum of 15 characters in length.</p>
+</blockquote>
+<p>密碼長度至少要 8 個字元，建議超過 15 個字元</p>
+<blockquote>
+<p>Verifiers and CSPs SHOULD permit a maximum password length of at least 64 characters.</p>
+</blockquote>
+<p>系統可支援密碼長度至少要超過 64 個字元</p>
+<blockquote>
+<p>Verifiers and CSPs SHOULD accept all printing ASCII characters and the space character in passwords.</p>
+</blockquote>
+<p>應該要接受所有 ASCII 可視字元</p>
+<blockquote>
+<p>Verifiers and CSPs SHOULD accept Unicode characters in passwords. Each Unicode code point SHALL be counted as a single character when evaluating password length.</p>
+</blockquote>
+<p>建議要支援所有 Unicode，每個 Unicode code point 視為一個字元</p>
+<blockquote>
+<p>Verifiers and CSPs SHALL NOT impose other composition rules (e.g., requiring mixtures of different character types) for passwords.</p>
+</blockquote>
+<p>不能對密碼施加其他複雜度要求，比如說「應該同時包含特殊符號、大寫英文字母、小寫英文字母，不符合要求就拒絕你的密碼申請 ಠ౪ಠ」</p>
+<blockquote>
+<p>Verifiers and CSPs SHALL NOT require users to change passwords periodically. However, verifiers SHALL force a change if there is evidence of compromise of the authenticator.</p>
+</blockquote>
+<p>不能要求用戶定期更換密碼，除非有證據說這組密碼已外洩</p>
+<blockquote>
+<p>Verifiers and CSPs SHALL NOT permit the subscriber to store a hint that is accessible to an unauthenticated claimant.</p>
+</blockquote>
+<p>對未驗證之用戶不應該提供密碼提示，就是說不能提供「不知道密碼嗎？那你告訴我你家養的寵物是什麼？知道我就當作你通過」</p>
+<blockquote>
+<p>Verifiers and CSPs SHALL NOT prompt subscribers to use knowledge-based authentication (KBA) (e.g., “What was the name of your first pet?”) or security questions when choosing passwords.</p>
+</blockquote>
+<p>用戶註冊密碼時，也不應該詢問知識型驗證問題 (KBA)，簡單來說就是關於 KBA 都不要用</p>
+<blockquote>
+<p>Verifiers SHALL verify the entire submitted password (i.e., not truncate it).</p>
+</blockquote>
+<p>驗證密碼時應該針對整組輸入密碼進行驗證，而非片段，反例如下：<br />
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">Verify_PW</span>(<span class="params">UserInput: <span class="built_in">str</span>, RealPW: <span class="built_in">str</span></span>):</span><br><span class="line">	<span class="keyword">if</span> RealPW <span class="keyword">in</span> UserInput:</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">Verify_PW</span>(<span class="params">UserInput: <span class="built_in">str</span>, token: <span class="built_in">str</span></span>):</span><br><span class="line">	<span class="keyword">if</span> UserInput[<span class="number">0</span>:<span class="built_in">len</span>(token)-<span class="number">1</span>] == token:</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>When processing a request to establish or change a password, verifiers SHALL compare the prospective secret against a blocklist that contains known commonly used, expected, or compromised passwords. The entire password SHALL be subject to comparison, not substrings or words that might be contained therein. For example, the list MAY include but is not limited to:</p>
+<ul>
+<li>Passwords obtained from previous breach corpuses</li>
+<li>Dictionary words</li>
+<li>Context-specific words, such as the name of the service, the username, and derivatives thereof<br />
+If the chosen password is found on the blocklist, the CSP or verifier SHALL require the subscriber to select a different secret and SHALL provide the reason for rejection. Since the blocklist is used to defend against brute-force attacks and unsuccessful attempts are rate-limited, as described below, the blocklist SHOULD be of sufficient size to prevent subscribers from choosing passwords that attackers are likely to guess before reaching the attempt limit.<br />
+Excessively large blocklists are of little incremental security benefit because the blocklist is used to defend against online attacks, which are already limited by the throttling requirements described in Sec. 3.2.2.</li>
+</ul>
+</blockquote>
+<p>用戶創建或更新密碼時，系統應該應該驗證整段 password，而不是其中的子字串，且系統內 blocklist 上的皆應該要驗證到，Blocklist 可能包含之前洩漏出去的密碼、特定字典上的字、特定字詞，例如系統名稱、用戶名或其他可推導之字詞，如果有違反上述情形，要拒絕用戶的註冊，並提供原因。而 blocklist 的 size 應該足夠大，衡量準則是攻擊者無法在嘗試次數內輸入到正確的用戶密碼，但 blocklist 的 size 不是越大越好，太大對安全性的增加並沒有太大的影響</p>
+<blockquote>
+<p>Verifiers SHALL offer guidance to the subscriber to assist the user in choosing a strong password.</p>
+</blockquote>
+<p>系統應該提供用戶安全密碼準則，讓用戶有機會可以知道如何設定才是安全的密碼</p>
+<blockquote>
+<p>Verifiers SHALL implement a rate-limiting mechanism that effectively limits the number of failed authentication attempts that can be made on the subscriber account</p>
+</blockquote>
+<p>系統要提供嘗試次數限制，顯然是為了增加攻擊者攻擊成本</p>
+<blockquote>
+<p>Verifiers SHALL allow the use of password managers. Verifiers SHOULD permit claimants to use the “paste” functionality when entering a password to facilitate their use. Password managers have been shown to increase the likelihood that users will choose stronger passwords, particularly if the password managers include password generators.</p>
+</blockquote>
+<p>這邊提到系統應該允許密碼管理器、使用貼上輸入密碼，從這裡可以看到 NIST 認為密碼管理器是可信任的，NIST 說使用密碼管理器的用戶比較有可能使用安全的強密碼，尤其是密碼管理器支援自動產生密碼的功能，畢竟不需要自己想也不用記，大家就有餘力追求安全，這在這一版的指南是很重要的觀念，NIST 開始強調「當準則不讓使用者感到負擔，用戶才願意<strong>主動</strong>追求安全」</p>
+<blockquote>
+<p>To assist the claimant in successfully entering a password, the verifier SHOULD offer an option to display the secret — rather than a series of dots or asterisks (*) — while it is entered and until it is submitted to the verifier. This allows the claimant to confirm their entry if they are in a location where their screen is unlikely to be observed. The verifier MAY also permit the claimant’s device to display individual entered characters for a short time after each character is typed to verify the correct entry. This is common on mobile devices.</p>
+</blockquote>
+<p>系統可以用一堆點點或星號擋住用戶輸入的密碼，但至少要提供一個眼睛按鈕或其他方法讓用戶有方法可以看到自己輸入了什麼，畢竟 typo 是無可避免的，像是 Linux 打了 sudo 指令，系統跟用戶討密碼時，用戶輸入了什麼都看不到，這就不符合 NIST 這邊說的。而 NIST 還提到在行動裝置上，可以讓剛輸入的密碼顯示幾秒鐘再變成點點或星號，這樣對用戶也比較容易觀察自己輸入了什麼</p>
+<blockquote>
+<p>Verifiers MAY make allowances for mistyping, such as removing leading and trailing whitespace characters before verification or allowing the verification of passwords with differing cases for the leading character, provided that passwords remain at least the required minimum length after such processing.</p>
+</blockquote>
+<p>系統可以新增一個 feature 是 truncate 掉開頭跟結尾的空白，只要符合前述密碼規定 (e.g., length)，這也是因為避免用戶 typo 的設計，但可以注意的是 NIST 用 MAY 表示這個強制力很低，可以不用</p>
+<blockquote>
+<p>Verifiers and CSPs SHALL use approved encryption and an authenticated protected channel when requesting passwords.</p>
+</blockquote>
+<ul>
+<li>跟用戶討密碼時，應該都是經過加密的通道傳輸，不然就洩漏了</li>
+</ul>
+<blockquote>
+<p>Verifiers SHALL store passwords in a form that is resistant to offline attacks. Passwords SHALL be salted and hashed using a suitable password hashing scheme.</p>
+</blockquote>
+<ul>
+<li>系統要用<strong>加鹽雜湊</strong>儲存密碼，這是為了防範 offline attacker
+<blockquote>
+<p>Password hashing schemes take a password, a salt, and a cost factor as inputs and generate a password hash. Their purpose is to make each password guess more expensive for an attacker who has obtained a hashed password file, thereby making the cost of a guessing attack high or prohibitive.<br />
+hash 機制的輸入包含 password, salt 和 cost factor。Cost factor 可以想成 round 數，cost factor 大，表示運算成本越高。目的是比起一般 hash 增加攻擊難度，畢竟如果攻擊者知道 hash algorithm 和一些 key 這個 hash 就沒用了<br />
+ The chosen cost factor SHOULD be as high as practical without negatively impacting verifier performance. It SHOULD be increased over time to account for increases in computing performance. An approved password hashing scheme published in the latest revision of [SP800-132] or updated NIST guidelines on password hashing schemes SHOULD be used. The chosen output length of the password verifier, excluding the salt and versioning information, SHOULD be the same as the length of the underlying password hashing scheme output.</p>
+</blockquote>
+<ul>
+<li>Cost factor 越大越好，但不能對 verifier 的驗證效率產生負面影響</li>
+<li>hash 應該要用之前準則提出來的，也就是說不能用危險的 hash，例如 SHA1</li>
+<li>至於密碼長度合理與否的判斷是在不含鹽的情況下審視的</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>The salt SHALL be at least 32 bits in length and chosen to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash SHALL be stored for each password. A reference to the password hashing scheme used, including the work factor, SHOULD be stored for each password to allow migration to new algorithms and work factors. For example, for the Password-Based Key Derivation Function 2 (PBKDF2) [SP800-132], the cost factor is an iteration count: the more times that the PBKDF2 function is iterated, the longer it takes to compute the password hash.</p>
+</blockquote>
+<ul>
+<li>鹽的長度至少要 32-bit，且要避免鹽之間也發生 collision 的狀況</li>
+<li>每組 password 應該都會對到一個 salt 和一個 hash result，這是為了因應當更換 hash 方法或 cost factor 的時候</li>
+</ul>
+<blockquote>
+<p>In addition, verifiers SHOULD perform an additional iteration of a keyed hashing or encryption operation using a secret key known only to the verifier. If used, this key value SHALL be generated by an approved random bit generator, as described in Sec. 3.2.12. The secret key value SHALL be stored separately from the hashed passwords. It SHOULD be stored and used within a hardware-protected area, such as a hardware security module or trusted execution environment (TEE). With this additional iteration, brute-force attacks on the hashed passwords are impractical as long as the secret key value remains secret.</p>
+</blockquote>
+<ul>
+<li>NIST 建議 verifier 應該要多提供一層 key hashing (?) 或是加密</li>
+<li>當然如果有做這一步的話，key 的值要是一個驗證過確定夠安全的 random bit generator 產生，且要放在硬體保護安全的地方</li>
+</ul>
+<h1 id="重點總整理"><a class="anchor" href="#重點總整理">#</a> 重點總整理</h1>
+<ol>
+<li>密碼長度遠比複雜度重要</li>
+<li>不要在不同平台重複使用密碼，避免遭到撞庫攻擊</li>
+<li>不再使用提示等知識型驗證機制</li>
+<li>不再定期更換密碼，除非密碼遭洩漏</li>
+<li>推薦使用合規的密碼管理器</li>
+<li>啟用多因子驗證，加強安全性</li>
+</ol>
+<p>雖然說這份數位身分驗證指南仍只是草案，但可以看到 NIST 在這個版本中對於讓使用者方便記憶管理密碼這件事情下了一些功夫，因為太過複雜的方式反而會讓使用者對於安全這件事卻步，甚至因為對安全無感而使用更不安全的方式。</p>
+<blockquote>
+<p>References: <span class="exturl" data-url="aHR0cHM6Ly9wYWdlcy5uaXN0Lmdvdi84MDAtNjMtNC9zcDgwMC02M2IuaHRtbCNyZXFhdXRodHlwZQ==">NIST SP 800-63B Section 3.1</span><br />
+Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2E9aSZhbXA7dXJsPWh0dHBzJTNBJTJGJTJGY2hlZWt5bXVua2V5LmNvLnVrJTJGYmxvZyUyRnRoZS1yb2xlLXBhc3N3b3Jkcy1wbGF5LWluLWEtd29ybGQtb2YtY3liZXJjcmltZSUyRiZhbXA7cHNpZz1BT3ZWYXcwWV9TM2t5dDhqeE5XZU5YaFA4YVZhJmFtcDt1c3Q9MTcyOTM5OTkyMjUzMTAwMCZhbXA7c291cmNlPWltYWdlcyZhbXA7Y2Q9dmZlJmFtcDtvcGk9ODk5Nzg0NDkmYW1wO3ZlZD0wQ0JRUWpSeHFGd29UQ0pEcnJmclNtWWtERlFBQUFBQWRBQUFBQUJBSg==">here</span></p>
+</blockquote>
+
+      <div class="tags">
+          <a href="/tags/%E8%B3%87%E5%AE%89/" rel="tag"><i class="ic i-tag"></i> 資安</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新於</span>
+    <time title="修改時間：2024-10-19 13:45:49" itemprop="dateModified" datetime="2024-10-19T13:45:49+08:00">2024-10-19</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>作者： </strong>Luke <i class="ic i-at"><em>@</em></i>Luke's Blog
+  </li>
+  <li class="link">
+    <strong>文章連結：</strong>
+    <a href="https://april-aries.github.io/2024/10/19/NIST800-63-4/" title="NIST 800-63-4 SP 800-63B Section 3.1">https://april-aries.github.io/2024/10/19/NIST800-63-4/</a>
+  </li>
+  <li class="license">
+    <strong>版權聲明： </strong>本 blog 所有文章除特別聲明外，均採用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 許可協議。複製請註明出處！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2024/06/29/SemesterReview/SemesterReview1122/" itemprop="url" rel="prev" data-background-image="&#x2F;assets&#x2F;Covers&#x2F;CoverReview.jpg" title="112-2 學期回顧">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> 學期回顧</span>
+  <h3>112-2 學期回顧</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目錄">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#prologue"><span class="toc-number">1.</span> <span class="toc-text"> Prologue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#authentication-assurance-levels-aal"><span class="toc-number">2.</span> <span class="toc-text"> Authentication Assurance Levels (AAL)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#aal1"><span class="toc-number">2.1.</span> <span class="toc-text"> AAL1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aal2"><span class="toc-number">2.2.</span> <span class="toc-text"> AAL2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aal3"><span class="toc-number">2.3.</span> <span class="toc-text"> AAL3</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#authenticator-and-verifier-requirements"><span class="toc-number">3.</span> <span class="toc-text"> Authenticator and Verifier Requirements</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#31-requirements-by-authenticator-type"><span class="toc-number">3.1.</span> <span class="toc-text"> 3.1 Requirements by Authenticator Type</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#311-password"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 3.1.1 Password</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%87%8D%E9%BB%9E%E7%B8%BD%E6%95%B4%E7%90%86"><span class="toc-number">4.</span> <span class="toc-text"> 重點總整理</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="該系列文章">
+        <ul>
+          <li class="active"><a href="/2024/10/19/NIST800-63-4/" rel="bookmark" title="NIST 800-63-4 SP 800-63B Section 3.1">NIST 800-63-4 SP 800-63B Section 3.1</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="About">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Luke"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Luke</p>
+  <div class="description" itemprop="description">Hi there!</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">7</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">3</span>
+        <span class="name">分類</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">8</span>
+        <span class="name">標籤</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FwcmlsLUFyaWVz" title="https:&#x2F;&#x2F;github.com&#x2F;April-Aries"><i class="ic i-github"></i></span>
+      <span class="exturl item email" data-url="bWFpbHRvOmx1a2UwNDE1MTBAZ21haWwuY29t" title="mailto:luke041510@gmail.com"><i class="ic i-envelope"></i></span>
+      <span class="exturl item facebook" data-url="aHR0cHM6Ly9mYWNlYm9vay5jb20vcHJvZmlsZS5waHA/aWQ9MTAwMDI3MjE4NDMzMzQ5" title="https:&#x2F;&#x2F;facebook.com&#x2F;profile.php?id&#x3D;100027218433349"><i class="ic i-facebook"></i></span>
+      <span class="exturl item youtube" data-url="aHR0cHM6Ly93d3cueW91dHViZS5jb20vQGJveXVjaGVuMzEzNg==" title="https:&#x2F;&#x2F;www.youtube.com&#x2F;@boyuchen3136"><i class="ic i-youtube"></i></span>
+      <span class="exturl item instagram" data-url="aHR0cHM6Ly9pbnN0YWdyYW0uY29tL2x1a2UuMDQxOQ==" title="https:&#x2F;&#x2F;instagram.com&#x2F;luke.0419"><i class="ic i-instagram"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首頁</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>關於</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>歸檔</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分類</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>標籤</a>
+  </li>
+
+  </ul>
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>隨機文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分類於 Blog">Blog</a>
+</div>
+
+    <span><a href="/2024/01/14/blog/BuildYourBlog01/" title="How To Build Your Own Blog Chapter 1：Blueprint">How To Build Your Own Blog Chapter 1：Blueprint</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%96%B0%E7%9F%A5/" title="分類於 新知">新知</a>
+</div>
+
+    <span><a href="/2024/10/19/NIST800-63-4/" title="NIST 800-63-4 SP 800-63B Section 3.1">NIST 800-63-4 SP 800-63B Section 3.1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分類於 Blog">Blog</a>
+</div>
+
+    <span><a href="/2024/01/12/blog/AboutThisBlog/" title="About This Blog">About This Blog</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SemesterReview/" title="分類於 學期回顧">學期回顧</a>
+</div>
+
+    <span><a href="/2024/06/29/SemesterReview/SemesterReview1122/" title="112-2 學期回顧">112-2 學期回顧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2024/03/17/RTFG/" title="成為資工系學生技能背包 0x01：RTFM &amp; STFG">成為資工系學生技能背包 0x01：RTFM & STFG</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SemesterReview/" title="分類於 學期回顧">學期回顧</a>
+</div>
+
+    <span><a href="/2024/01/31/SemesterReview/SemesterReview1121/" title="112-1 學期回顧">112-1 學期回顧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2024/05/15/SCO/" title="Social Cognitive Optimization">Social Cognitive Optimization</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新評論</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Luke @ Luke's Blog</span>
+  </div>
+  <div class="powered-by">
+    感謝 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span> 提供的模板
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2024/10/19/NIST800-63-4/',
+    favicon: {
+      show: "(ゝ∀･)b耶",
+      hide: "Σ( ° △ °)快回來"
+    },
+    search : {
+      placeholder: "文章搜尋",
+      empty: "關於 「 ${query} 」，什麼也沒找到",
+      stats: "${time} ms 內找到 ${hits} 條結果"
+    },
+    valine: true,fancybox: true,
+    copyright: '複製成功，請遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 協議。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
