@@ -15,9 +15,9 @@
   <meta http-equiv="Cache-Control" content="no-siteapp">
 
 
-<link rel="alternate" type="application/rss+xml" title="Luke's Blog" href="https://april-aries.github.io/rss.xml" />
-<link rel="alternate" type="application/atom+xml" title="Luke's Blog" href="https://april-aries.github.io/atom.xml" />
-<link rel="alternate" type="application/json" title="Luke's Blog" href="https://april-aries.github.io/feed.json" />
+<link rel="alternate" type="application/rss+xml" title="This is Luke" href="https://april-aries.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="This is Luke" href="https://april-aries.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="This is Luke" href="https://april-aries.github.io/feed.json" />
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
@@ -27,14 +27,14 @@
   <meta name="keywords" content="資安" />
 
 
-<link rel="canonical" href="https://april-aries.github.io/2024/10/19/NIST800-63-4/">
+<link rel="canonical" href="https://april-aries.github.io/2024/10/19/News/NIST800-63-4/">
 
 
 
   
   <title>
 NIST 800-63-4 SP 800-63B Section 3.1 - 新知 |
-Luke's Blog</title>
+This is Luke</title>
 <meta name="generator" content="Hexo 7.0.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
   <div id="loading">
@@ -127,21 +127,21 @@ Luke's Blog</title>
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
 <span><a href="/">首頁</a></span><i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E6%96%B0%E7%9F%A5/" itemprop="item" rel="index" title="分類於 新知"><span itemprop="name">新知</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/News/" itemprop="item" rel="index" title="分類於 新知"><span itemprop="name">新知</span></a>
 <meta itemprop="position" content="1" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-TW">
-  <link itemprop="mainEntityOfPage" href="https://april-aries.github.io/2024/10/19/NIST800-63-4/">
+  <link itemprop="mainEntityOfPage" href="https://april-aries.github.io/2024/10/19/News/NIST800-63-4/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/avatar.jpg">
     <meta itemprop="name" content="Luke">
-    <meta itemprop="description" content="在資工系緊抓著浮木載浮載沉的人, Hi there!">
+    <meta itemprop="description" content="On my way to be a hacker, Hi there!">
   </span>
 
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Luke's Blog">
+    <meta itemprop="name" content="This is Luke">
   </span>
 
   <div class="body md" itemprop="articleBody">
@@ -325,40 +325,25 @@ Excessively large blocklists are of little incremental security benefit because 
 <blockquote>
 <p>Verifiers and CSPs SHALL use approved encryption and an authenticated protected channel when requesting passwords.</p>
 </blockquote>
-<ul>
-<li>跟用戶討密碼時，應該都是經過加密的通道傳輸，不然就洩漏了</li>
-</ul>
+<p>跟用戶討密碼時，應該都是經過加密的通道傳輸，不然就洩漏了</p>
 <blockquote>
-<p>Verifiers SHALL store passwords in a form that is resistant to offline attacks. Passwords SHALL be salted and hashed using a suitable password hashing scheme.</p>
-</blockquote>
-<ul>
-<li>系統要用<strong>加鹽雜湊</strong>儲存密碼，這是為了防範 offline attacker
-<blockquote>
-<p>Password hashing schemes take a password, a salt, and a cost factor as inputs and generate a password hash. Their purpose is to make each password guess more expensive for an attacker who has obtained a hashed password file, thereby making the cost of a guessing attack high or prohibitive.<br />
+<p>Verifiers SHALL store passwords in a form that is resistant to offline attacks. Passwords SHALL be salted and hashed using a suitable password hashing scheme.<br />
+ 系統要用<strong>加鹽雜湊</strong>儲存密碼，這是為了防範 offline attacker<br />
+Password hashing schemes take a password, a salt, and a cost factor as inputs and generate a password hash. Their purpose is to make each password guess more expensive for an attacker who has obtained a hashed password file, thereby making the cost of a guessing attack high or prohibitive.<br />
 hash 機制的輸入包含 password, salt 和 cost factor。Cost factor 可以想成 round 數，cost factor 大，表示運算成本越高。目的是比起一般 hash 增加攻擊難度，畢竟如果攻擊者知道 hash algorithm 和一些 key 這個 hash 就沒用了<br />
- The chosen cost factor SHOULD be as high as practical without negatively impacting verifier performance. It SHOULD be increased over time to account for increases in computing performance. An approved password hashing scheme published in the latest revision of [SP800-132] or updated NIST guidelines on password hashing schemes SHOULD be used. The chosen output length of the password verifier, excluding the salt and versioning information, SHOULD be the same as the length of the underlying password hashing scheme output.</p>
+ The chosen cost factor SHOULD be as high as practical without negatively impacting verifier performance. It SHOULD be increased over time to account for increases in computing performance. An approved password hashing scheme published in the latest revision of [SP800-132] or updated NIST guidelines on password hashing schemes SHOULD be used. The chosen output length of the password verifier, excluding the salt and versioning information, SHOULD be the same as the length of the underlying password hashing scheme output.<br />
+- Cost factor 越大越好，但不能對 verifier 的驗證效率產生負面影響<br />
+ - hash 應該要用之前準則提出來的，也就是說不能用危險的 hash，例如 SHA1<br />
+- 至於密碼長度合理與否的判斷是在不含鹽的情況下審視的</p>
 </blockquote>
-<ul>
-<li>Cost factor 越大越好，但不能對 verifier 的驗證效率產生負面影響</li>
-<li>hash 應該要用之前準則提出來的，也就是說不能用危險的 hash，例如 SHA1</li>
-<li>至於密碼長度合理與否的判斷是在不含鹽的情況下審視的</li>
-</ul>
-</li>
-</ul>
 <blockquote>
 <p>The salt SHALL be at least 32 bits in length and chosen to minimize salt value collisions among stored hashes. Both the salt value and the resulting hash SHALL be stored for each password. A reference to the password hashing scheme used, including the work factor, SHOULD be stored for each password to allow migration to new algorithms and work factors. For example, for the Password-Based Key Derivation Function 2 (PBKDF2) [SP800-132], the cost factor is an iteration count: the more times that the PBKDF2 function is iterated, the longer it takes to compute the password hash.</p>
 </blockquote>
-<ul>
-<li>鹽的長度至少要 32-bit，且要避免鹽之間也發生 collision 的狀況</li>
-<li>每組 password 應該都會對到一個 salt 和一個 hash result，這是為了因應當更換 hash 方法或 cost factor 的時候</li>
-</ul>
+<p>鹽的長度至少要 32-bit，且要避免鹽之間也發生 collision 的狀況。每組 password 應該都會對到一個 salt 和一個 hash result，這是為了因應當更換 hash 方法或 cost factor 的時候</p>
 <blockquote>
 <p>In addition, verifiers SHOULD perform an additional iteration of a keyed hashing or encryption operation using a secret key known only to the verifier. If used, this key value SHALL be generated by an approved random bit generator, as described in Sec. 3.2.12. The secret key value SHALL be stored separately from the hashed passwords. It SHOULD be stored and used within a hardware-protected area, such as a hardware security module or trusted execution environment (TEE). With this additional iteration, brute-force attacks on the hashed passwords are impractical as long as the secret key value remains secret.</p>
 </blockquote>
-<ul>
-<li>NIST 建議 verifier 應該要多提供一層 key hashing (?) 或是加密</li>
-<li>當然如果有做這一步的話，key 的值要是一個驗證過確定夠安全的 random bit generator 產生，且要放在硬體保護安全的地方</li>
-</ul>
+<p>NIST 建議 verifier 應該要多提供一層 key hashing 或是加密，當然如果有做這一步的話，key 的值要是一個驗證過確定夠安全的 random bit generator 產生，且要放在硬體保護安全的地方</p>
 <h1 id="重點總整理"><a class="anchor" href="#重點總整理">#</a> 重點總整理</h1>
 <ol>
 <li>密碼長度遠比複雜度重要</li>
@@ -387,7 +372,7 @@ Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新於</span>
-    <time title="修改時間：2024-10-19 13:45:49" itemprop="dateModified" datetime="2024-10-19T13:45:49+08:00">2024-10-19</time>
+    <time title="修改時間：2024-10-20 02:06:27" itemprop="dateModified" datetime="2024-10-20T02:06:27+08:00">2024-10-20</time>
   </span>
 </div>
 
@@ -396,11 +381,11 @@ Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2
 <div id="copyright">
 <ul>
   <li class="author">
-    <strong>作者： </strong>Luke <i class="ic i-at"><em>@</em></i>Luke's Blog
+    <strong>作者： </strong>Luke <i class="ic i-at"><em>@</em></i>This is Luke
   </li>
   <li class="link">
     <strong>文章連結：</strong>
-    <a href="https://april-aries.github.io/2024/10/19/NIST800-63-4/" title="NIST 800-63-4 SP 800-63B Section 3.1">https://april-aries.github.io/2024/10/19/NIST800-63-4/</a>
+    <a href="https://april-aries.github.io/2024/10/19/News/NIST800-63-4/" title="NIST 800-63-4 SP 800-63B Section 3.1">https://april-aries.github.io/2024/10/19/News/NIST800-63-4/</a>
   </li>
   <li class="license">
     <strong>版權聲明： </strong>本 blog 所有文章除特別聲明外，均採用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 許可協議。複製請註明出處！
@@ -447,7 +432,7 @@ Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2
       </div>
       <div class="related panel pjax" data-title="該系列文章">
         <ul>
-          <li class="active"><a href="/2024/10/19/NIST800-63-4/" rel="bookmark" title="NIST 800-63-4 SP 800-63B Section 3.1">NIST 800-63-4 SP 800-63B Section 3.1</a></li>
+          <li class="active"><a href="/2024/10/19/News/NIST800-63-4/" rel="bookmark" title="NIST 800-63-4 SP 800-63B Section 3.1">NIST 800-63-4 SP 800-63B Section 3.1</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="About">
@@ -554,46 +539,6 @@ Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/blog/" title="分類於 Blog">Blog</a>
-</div>
-
-    <span><a href="/2024/01/14/blog/BuildYourBlog01/" title="How To Build Your Own Blog Chapter 1：Blueprint">How To Build Your Own Blog Chapter 1：Blueprint</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/%E6%96%B0%E7%9F%A5/" title="分類於 新知">新知</a>
-</div>
-
-    <span><a href="/2024/10/19/NIST800-63-4/" title="NIST 800-63-4 SP 800-63B Section 3.1">NIST 800-63-4 SP 800-63B Section 3.1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/blog/" title="分類於 Blog">Blog</a>
-</div>
-
-    <span><a href="/2024/01/12/blog/AboutThisBlog/" title="About This Blog">About This Blog</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SemesterReview/" title="分類於 學期回顧">學期回顧</a>
-</div>
-
-    <span><a href="/2024/06/29/SemesterReview/SemesterReview1122/" title="112-2 學期回顧">112-2 學期回顧</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 </div>
 
     <span><a href="/2024/03/17/RTFG/" title="成為資工系學生技能背包 0x01：RTFM &amp; STFG">成為資工系學生技能背包 0x01：RTFM & STFG</a></span>
@@ -616,6 +561,46 @@ Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2
 </div>
 
     <span><a href="/2024/05/15/SCO/" title="Social Cognitive Optimization">Social Cognitive Optimization</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SemesterReview/" title="分類於 學期回顧">學期回顧</a>
+</div>
+
+    <span><a href="/2024/06/29/SemesterReview/SemesterReview1122/" title="112-2 學期回顧">112-2 學期回顧</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分類於 Blog">Blog</a>
+</div>
+
+    <span><a href="/2024/01/12/blog/AboutThisBlog/" title="About This Blog">About This Blog</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/blog/" title="分類於 Blog">Blog</a>
+</div>
+
+    <span><a href="/2024/01/14/blog/BuildYourBlog01/" title="How To Build Your Own Blog Chapter 1：Blueprint">How To Build Your Own Blog Chapter 1：Blueprint</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/News/" title="分類於 新知">新知</a>
+</div>
+
+    <span><a href="/2024/10/19/News/NIST800-63-4/" title="NIST 800-63-4 SP 800-63B Section 3.1">NIST 800-63-4 SP 800-63B Section 3.1</a></span>
   </li>
 
   </ul>
@@ -646,7 +631,7 @@ Cover from <span class="exturl" data-url="aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS91cmw/c2
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2024/10/19/NIST800-63-4/',
+    path: '2024/10/19/News/NIST800-63-4/',
     favicon: {
       show: "(ゝ∀･)b耶",
       hide: "Σ( ° △ °)快回來"
