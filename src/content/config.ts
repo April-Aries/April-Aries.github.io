@@ -57,7 +57,7 @@ const project = defineCollection({
 			alt: z.string().optional()
 		}).optional(),
 		ogImage: z.string().optional(),
-		stack: z.array(z.string()).default([]).transform(removeDupsAndLowercase),
+		stack: z.array(z.string()).default([]).transform(removeDupsAndLowercase).optional(),
 		platform: z.string().optional(),
 		website: z.string().optional(),
 		github: z.string().optional(),
