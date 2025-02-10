@@ -184,4 +184,4 @@ We **identified** that even in an environment secured by fully homomorphic encry
 
 This work was authored by Kuan-Phing Wang and Bo-Yu Chen, under the supervision of professors Po-Wen Chi and Chao Wang.
 
-The study has been published in 2024 Asia Joint Conference for Information Security (Asia JCIS) and gained best paper awards. It also has passed the 113 College Student Research Scholarship National Science Committee.
+The study has been published in 2024 Asia Joint Conference on Information Security (Asia JCIS) and gained best paper awards. It also has passed the 113 College Student Research Scholarship National Science Committee.
