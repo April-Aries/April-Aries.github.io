@@ -1,0 +1,188 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/styles/gruvbox.css */
+:root {
+  --bg: #282828;
+  --fg: #ebdbb2;
+  --gray: #928374;
+  --red: #cc241d;
+  --green: #b8bb26;
+  --yellow: #d79921;
+  --blue: #458588;
+  --purple: #b16286;
+  --aqua: #689d6a;
+  --orange: #d65d0e;
+
+  /* Typography */
+  --font-body: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-heading: 'LXGW WenKai Mono TC', 'Georgia', 'Times New Roman', serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  line-height: 2.0;
+  padding: var(--padding);
+  max-width: var(--content-width);
+  margin: auto;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  margin: 1.5em 0 0.5em;
+  font-weight: bold;
+}
+
+h1 { font-size: 2em; color: var(--yellow); }
+h2 { font-size: 1.75em; color: var(--orange); }
+h3 { font-size: 1.5em; color: var(--blue); }
+h4 { font-size: 1.25em; color: var(--aqua); }
+h5 { font-size: 1.1em; color: var(--pruple); }
+h6 { font-size: 1em; color: var(--gray); }
+
+/* Paragraphs */
+p {
+  margin-bottom: 1em;
+}
+
+/* Links */
+a {
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--blue);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--orange);
+  border-bottom: 1px dashed var(--orange);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5em;
+  margin: 1em 0;
+}
+
+ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--gray);
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* Code */
+code {
+  font-family: 'Fira Code', monospace;
+  background-color: var(--bg);
+  color: var(--green);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+pre {
+  background-color: var(--bg);
+  color: var(--fg);
+  padding: 1em;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--gray);
+  font-family: 'Fira Code', monospace;
+  line-height: 1.4;
+}
+
+pre code {
+  background-color: transparent;
+  color: var(--fg);
+  padding: 0;
+  display: block;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  border: 1px solid var(--gray);
+}
+
+th, td {
+  border: 1px solid var(--gray);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--gray);
+  color: var(--bg);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  display: block;
+  margin: auto;
+  border-radius: 6px;
+}
+
+/* Horizontal Rules */
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--gray);
+  margin: 2em 0;
+}
+
+/* Footnotes */
+sup {
+  font-size: 0.85em;
+  vertical-align: super;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 { font-size: 1.75em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1.3em; }
+  h4 { font-size: 1.1em; }
+  h5, h6 { font-size: 1em; }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-nvim-bg;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-nvim-gray rounded;
+}

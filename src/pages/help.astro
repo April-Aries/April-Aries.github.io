@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Help">
+
+  <div class="flex flex-col items-center">
+    <h1 class="text-4xl font-bold mb-8 text-nvim-blue">Help Page</h1>
+    <div class="text-center">
+      <p class="mb-4">version 0.0.1</p>
+    </div>
+  </div>
+
+  <div class="flex flex-col text-left justify-left p-10">
+        <p class="p-4">
+            這一頁會針對網頁使用的基本指令給予教學，幫助你更快上手使用這款以 vim 為主題的頁面。
+            不過雖然說是以 vim 為主題開發，但這不代表所有指令都有被實做出來，使用時還請小心<br/>
+            This page contains basic instructions to use this page. Some Vim key bindings are enabled and can be used within the 
+            page itself, but some of them don't work in all the pages since I did not considered it necessary.
+        </p>
+
+        <h2 class="p-4 text-2xl font-bold text-nvim-blue">Instructions</h2>
+        <p class="ml-4"><a class="font-bold">u</a>: Navigates up one level. （回到上一頁）</p>
+        <p class="ml-4"><a class="font-bold">j</a>: Move the cursor down one line. （向下捲動）</p>
+        <p class="ml-4"><a class="font-bold">k</a>: Move the cursor up one line. （向上捲動）</p>
+        <p class="ml-4"><a class="font-bold">gg</a>: Move the cursor to the first line of the page. （回到最上面）</p>
+        <p class="ml-4"><a class="font-bold">G</a>: Move the cursor to the last line of the page. （移至最下面）</p>
+        <p class="ml-4"><a class="font-bold">:&lt;command&gt;</a>: Executes a command. （執行指令）</p>
+  </div>
+</Layout>

@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="astro-vim-landing">
+  <div class="flex flex-col items-center">
+    <h1 class="text-4xl font-bold mb-8 text-nvim-blue">Welcome to AA's blog...</h1>
+    <div class="text-center">
+      <p class="mb-4">version 0.0.1</p>
+      <p class="mb-4">歡迎來到這個小世界，我是 AA</p>
+
+      <p class="mb-2">目前是國立臺灣師範大學資訊工程學系四年級學生，同時也在修習教育學程與 PASSION 偏鄉優質教育學分學程，主要研究領域在資訊安全</p>
+      <p class="mb-2">這個網站會放上一些看到的科技新知、競賽解題筆記、和一些個人生活紀錄。歡迎對我、對資安、對教育有興趣的人類們偶爾來看看</p>
+
+      <p class="mb-2">至於網站為什麼採用這個主題？因為本人是 vim 的忠實愛好者，有天逛 astro themes 看到 Alberto Perdomo 設計的 <a href="https://astro.build/themes/details/astro-vim/" class="text-nvim-green">astro-vim</a> 主題<br/>
+                      覺得實在太有趣了，就決定試著拿過來模改成自己喜歡的 gruvbox，並放上自己的東西，順便推廣給大家！</p>
+
+      <p class="mb-2">如果你是第一次使用 vim，或許你會需要仔細服用下方的使用說明和 help page 的教學，畢竟第一次使用 vim 的人都可能進的去出不來 :)</p>
+      <div class="p-8 text-nvim-green text-left">
+        <p>輸入  :about<span class="text-nvim-blue">&lt;Enter&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;檢視關於我的資訊</p>
+        <p>輸入  :blog<span class="text-nvim-blue">&lt;Enter&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;檢視所有文章</p>
+        <p>輸入  :contact<span class="text-nvim-blue">&lt;Enter&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;檢視聯絡方式</p>
+        <p>輸入  /<span class="text-nvim-blue">&lt;Search term&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;搜尋文章</p>
+        <p>輸入  :h<span class="text-nvim-blue">&lt;Enter&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;檢視 <a href="/help" class="underline text-nvim-blue hover:text-blue-800">help</a> 頁面</p>
+        <p>輸入  :q<span class="text-nvim-blue">&lt;Enter&gt;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;離開</p>
+      </div>
+    </div>
+  </div>
+</Layout>

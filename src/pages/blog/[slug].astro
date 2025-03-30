@@ -1,0 +1,24 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const { slug } = Astro.params;
+const blogEntries = await getCollection('blog');
+const entry = blogEntries.find((post) => post.slug === slug);
+
+if (!entry) {
+  return Astro.redirect('/404');
+}
+
+const { Content } = await entry.render();
+---
+
+<Layout title={entry.data.title}>
+  <div class="flex flex-col text-left justify-left p-10">
+    <!--article class="prose prose-invert max-w-none"-->
+    <article>
+      <h1 style="text-align: center">{entry.data.title}</h1>
+      <Content />
+    </article>
+  </div>
+</Layout>
