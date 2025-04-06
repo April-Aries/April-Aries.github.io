@@ -5,7 +5,7 @@ import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://April-Aries.github.io',
+  site: 'https://April-Aries-github-io.vercel.app',
 
   integrations: [tailwind(), mdx()],
   output: "server",
