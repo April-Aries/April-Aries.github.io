@@ -3,6 +3,7 @@ title: '透過 Reinforcement Learning 產生弦藝術'
 date: 2025-06-14
 description: '在類神經網路第三次 project，我和 David 使用了 RL 模型嘗試產生弦藝術圖片'
 layout: "simple"
+draft: true
 ---
 
 ## 緣起
