@@ -1,0 +1,459 @@
+<!doctype html><html lang=en dir=ltr class=scroll-smooth data-default-appearance=dark data-auto-appearance=true><head><meta charset=utf-8><meta http-equiv=content-language content="en"><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><title>Seed Lab PKI Writeup &#183; Luke's Blog</title><meta name=title content="Seed Lab PKI Writeup &#183; Luke's Blog"><meta name=description content="Writeup of Seed Lab Public Key Infrastructure (PKI)"><meta name=keywords content="writeup,"><link rel=canonical href=/posts/seedlab-pki/><link rel=alternate type=application/rss+xml href=/posts/seedlab-pki/index.xml title="Luke's Blog"><link type=text/css rel=stylesheet href=/css/main.bundle.min.b463c10bdfa19109c5789469ff3c98af5e92bce34624a6ee5de92640b62eea2f3c81c9d36c5bd7f5244a7597c0f108f6527804ad28a81cfce5129e98f17b563e.css integrity="sha512-tGPBC9+hkQnFeJRp/zyYr16SvONGJKbuXekmQLYu6i88gcnTbFvX9SRKdZfA8Qj2UngErSioHPzlEp6Y8XtWPg=="><script type=text/javascript src=/js/appearance.min.516a16745bea5a9bd011138d254cc0fd3973cd55ce6e15f3dec763e7c7c2c7448f8fe7b54cca811cb821b0c7e12cd161caace1dd794ac3d34d40937cbcc9ee12.js integrity="sha512-UWoWdFvqWpvQERONJUzA/TlzzVXObhXz3sdj58fCx0SPj+e1TMqBHLghsMfhLNFhyqzh3XlKw9NNQJN8vMnuEg=="></script><script defer type=text/javascript id=script-bundle src=/js/main.bundle.min.54688f522dbd435cd17577667367d50a06517a06f4b40b8c2f04d9e61afcb5f1b807ce42dfbe1f0d7979b2430f4e253cf548907cf81ab2f7efb0d66e57933d16.js integrity="sha512-VGiPUi29Q1zRdXdmc2fVCgZRegb0tAuMLwTZ5hr8tfG4B85C374fDXl5skMPTiU89UiQfPgasvfvsNZuV5M9Fg==" data-copy=Copy data-copied=Copied></script><script src=/lib/zoom/zoom.min.f592a181a15d2a5b042daa7f746c3721acf9063f8b6acd175d989129865a37d400ae0e85b640f9ad42cd98d1f8ad30931718cf8811abdcc5fcb264400d1a2b0c.js integrity="sha512-9ZKhgaFdKlsELap/dGw3Iaz5Bj+Las0XXZiRKYZaN9QArg6FtkD5rULNmNH4rTCTFxjPiBGr3MX8smRADRorDA=="></script><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><meta property="og:url" content="/posts/seedlab-pki/"><meta property="og:site_name" content="Luke's Blog"><meta property="og:title" content="Seed Lab PKI Writeup"><meta property="og:description" content="Writeup of Seed Lab Public Key Infrastructure (PKI)"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Seed Lab PKI Writeup"><meta name=twitter:description content="Writeup of Seed Lab Public Key Infrastructure (PKI)"><meta name=author content="Luke"><link href=https://github.com/april-aries rel=me><link href=https://instagram.com/luke.0419 rel=me><link href=https://linkedin.com/in/bo-yu-chen-ab8a402a9/ rel=me><link href=https://twitter.com/tp61i6m6_luke rel=me><link href=https://youtube.com/@boyuchen3136 rel=me><script src=/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script><meta name=theme-color></head><body class="flex flex-col h-screen px-6 m-auto text-lg leading-7 max-w-7xl bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32 scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600"><div id=the-top class="absolute flex self-center"><a class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600" href=#main-content><span class="font-bold text-primary-600 ltr:pr-2 rtl:pl-2 dark:text-primary-400">&darr;</span>Skip to main content</a></div><div class=min-h-[148px]></div><div class="fixed inset-x-0 min-h-[130px] opacity-65 pl-[24px] pr-[24px] bg-gradient-to-b from-neutral from-60% dark:from-neutral-800 to-transparent mix-blend-normal z-index-80"></div><div class="fixed inset-x-0 pl-[24px] pr-[24px] z-index-100"><div id=menu-blur class="absolute opacity-0 inset-x-0 top-0 h-full single_hero_background nozoom backdrop-blur-2xl shadow-2xl"></div><div class="relative max-w-[64rem] ml-auto mr-auto"><div class="main-menu flex items-center justify-between px-4 py-6 sm:px-6 md:justify-start gap-x-3 padding-main-menu"><div class="flex flex-1 items-center justify-between"><nav class="flex space-x-3"><a href=/ class="text-base font-medium text-gray-500 hover:text-gray-900">Luke&rsquo;s Blog</a></nav><nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12"><a href=/about/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title="About Me">About</p></a><a href=/now/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title=Now>Now</p></a><a href=/posts/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title="Blog Posts">Posts</p></a><a href=/categories/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title=Categories>Categories</p></a><a href=/tags/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-base font-medium" title=Tags>Tags</p></a><button id=search-button aria-label=Search class="text-base hover:text-primary-600 dark:hover:text-primary-400" title>
+<span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></span></button><div class="flex items-center"><button id=appearance-switcher aria-label="Dark mode switcher" type=button class="text-base hover:text-primary-600 dark:hover:text-primary-400"><div class="flex items-center justify-center dark:hidden"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z"/></svg></span></div><div class="items-center justify-center hidden dark:flex"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z"/></svg></span></div></button></div></nav><div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12"><span></span>
+<button id=search-button-mobile aria-label=Search class="text-base hover:text-primary-600 dark:hover:text-primary-400" title>
+<span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span></button>
+<button id=appearance-switcher-mobile aria-label="Dark mode switcher" type=button class="text-base hover:text-primary-600 dark:hover:text-primary-400 ltr:mr-1 rtl:ml-1"><div class="flex items-center justify-center dark:hidden"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M32 256C32 132.2 132.3 32 255.8 32c11.36.0 29.7 1.668 40.9 3.746 9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3 9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480 132.1 480 32 379.6 32 256z"/></svg></span></div><div class="items-center justify-center hidden dark:flex"><span class="relative block icon"><svg viewBox="0 0 512 512"><path fill="currentColor" d="M256 159.1c-53.02.0-95.1 42.98-95.1 95.1s41.2 96.9 95.1 96.9 95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347l-63.2-91.9 63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89 164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6 12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256 2.74 347.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7 19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109 109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69.0-127.1-57.31-127.1-127.1.0-70.69 57.31-127.1 127.1-127.1S383.1 186.2 383.1 256c0 70.7-56.4 127.1-127.1 127.1z"/></svg></span></div></button></div></div><div class="-my-2 md:hidden"><label id=menu-button class=block><div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400"><span class="relative block icon"><svg viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416c17.7.0 32 14.33 32 32 0 17.7-14.3 32-32 32H32C14.33 128 0 113.7.0 96zM0 256c0-17.7 14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32H32c-17.67.0-32-14.3-32-32zM416 448H32c-17.67.0-32-14.3-32-32s14.33-32 32-32H416c17.7.0 32 14.3 32 32s-14.3 32-32 32z"/></svg></span></div><div id=menu-wrapper class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 padding-top-[5px]"><ul class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none ltr:text-right rtl:text-left max-w-7xl"><li id=menu-close-button><span class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400"><span class="relative block icon"><svg viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75.0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75.0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75.0-45.25s32.75-12.5 45.25.0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25.0s12.5 32.75.0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></span></li><li class=mt-1><a href=/about/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title="About Me">About</p></a></li><li class=mt-1><a href=/now/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title=Now>Now</p></a></li><li class=mt-1><a href=/posts/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title="Blog Posts">Posts</p></a></li><li class=mt-1><a href=/categories/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title=Categories>Categories</p></a></li><li class=mt-1><a href=/tags/ class="flex items-center text-gray-500 hover:text-primary-600 dark:hover:text-primary-400"><p class="text-bg font-bg" title=Tags>Tags</p></a></li></ul></div></label></div></div></div></div><script type=text/javascript src=/js/background-blur.min.4812321520cc2e4cd52bf9137015a55bb6c0b5e66a6b2c96b8654c0ec99be59e8e6425dd838a6fd9bac54000586f37f4a9680bbefaa2aee4601a69e188005cf6.js integrity="sha512-SBIyFSDMLkzVK/kTcBWlW7bAteZqayyWuGVMDsmb5Z6OZCXdg4pv2brFQABYbzf0qWgLvvqiruRgGmnhiABc9g==" data-target-id=menu-blur></script><div class="relative flex flex-col grow"><main id=main-content class=grow><article class=max-w-full><header><ol class="text-sm text-neutral-500 dark:text-neutral-400 print:hidden"><li class=hidden><a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href=/>Luke's Blog</a><span class="px-1 text-primary-500">/</span></li><li class=inline><a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href=/posts/>Blog Posts</a><span class="px-1 text-primary-500">/</span></li><li class=hidden><a class="hover:underline decoration-neutral-300 dark:underline-neutral-600" href=/posts/seedlab-pki/>Seed Lab PKI Writeup</a><span class="px-1 text-primary-500">/</span></li></ol><h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">Seed Lab PKI Writeup</h1></header><section class="max-w-full mt-6 prose dark:prose-invert"><h2 class="relative group">Motivation<div id=motivation class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#motivation aria-label=Anchor>#</a></span></h2><p>公開金鑰加密是當前通訊安全的基礎，但在雙方傳送公開金鑰時，也成為中間人攻擊的目標之一，其根本的問題在於 <strong>驗證公開金鑰的擁有者</strong> 不是件容易的事情，換句話說，<strong>如何驗證送過來的公開金鑰就如它聲稱的是來自於該擁有者</strong>，而 <strong>公開金鑰基礎設施 (Public Key Infrastructure, PKI)</strong> 就是此問題的有效解法</p><h2 class="relative group">Lab Environment<div id=lab-environment class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#lab-environment aria-label=Anchor>#</a></span></h2><h3 class="relative group">Get Corresponding Files<div id=get-corresponding-files class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#get-corresponding-files aria-label=Anchor>#</a></span></h3><p>至 <a href=https://seedsecuritylabs.org/Labs_20.04/Crypto/Crypto_PKI/ target=_blank>Seed Labs 2.0 > Crypto > PKI Lab</a>
+下載相關檔案，包含 [題目說明] (<a href=https://seedsecuritylabs.org/Labs_20.04/Files/Crypto_PKI/Crypto_PKI.pdf target=_blank>https://seedsecuritylabs.org/Labs_20.04/Files/Crypto_PKI/Crypto_PKI.pdf</a>
+)與 <a href=https://seedsecuritylabs.org/Labs_20.04/Files/Crypto_PKI/Labsetup.zip target=_blank>lab 環境</a></p><h3 class="relative group">DNS Set Up<div id=dns-set-up class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#dns-set-up aria-label=Anchor>#</a></span></h3><p>在這個 lab 當中，會以 <a href=https://www.bank32.com target=_blank>www.bank32.com</a>
+作為設定 HTTPS server 的範例，因此需特別針對 DNS 做設定</p><pre tabindex=0><code class="language-bash=" data-lang="bash="># 打開 /etc/hosts，新增下面一行資訊
+[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ sudo vim /etc/hosts
+
+10.9.0.80 www.bank32.com
+</code></pre><h2 class="relative group">Lab Tasks<div id=lab-tasks class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#lab-tasks aria-label=Anchor>#</a></span></h2><h3 class="relative group">Task 1: Becoming a Certificate Authority (CA)<div id=task-1-becoming-a-certificate-authority-ca class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#task-1-becoming-a-certificate-authority-ca aria-label=Anchor>#</a></span></h3><p>:::success
+憑證管理中心、憑證頒發機構 (Certificate Authority, CA) 是具公信力第三方，可對個人及機關團體提供認證及憑證簽發管理等服務，而數位憑證 (digital certificates) 可以用來證明一把公開金鑰的擁有性。有些商業類型的 CAs 被稱作根憑證頒發機構 (root CAs)，例如 <a href=https://www.verisign.com/ target=_blank>VeriSign</a>
+，一般用戶可以透過 CA 獲取數位憑證，而 CA 的憑證可能是由另一間 CA 所頒發，不斷追溯源頭就會找到一間最大的 CA，即 root CA，而 root CA 的憑證是自行頒發的 (self-signed)，也理所當然的被相信，通常 root CA 憑證都是先裝在大多數的作業系統、網路瀏覽器或其他需要 PKI 的軟體</p><p>這個 task 的目標就是假扮 root CA 產生一張數位憑證，並在之後的 task 頒發憑證給其他 server
+:::</p><p>要使用 OpenSSL 產生憑證會需要一份設定檔 (configuration file)，通常設定檔會以 <code>.cnf</code> 後綴結尾，供三個 OpenSSL 指令所使用： <code>ca</code>, <code>req</code> 以及 <code>x509</code>。預設上 OpenSSL 會使用 <em>/usr/lib/ssl/openssl.cnf</em> 作為設定檔，但因為我會需要對它做一些修正，所以先將它複製到當前目錄，並告訴 OpenSSL 要使用這份新的配置檔。</p><p>在配置檔中的預設設定提到，所有東西會放在 <em>./demoCA</em> 底下，頒發的 certs 會放在 <em>$dir/certs</em>，頒發的 crl 會放在 <em>$dir/crl</em>，新憑證會放在 <em>$dir/newcerts</em>，index file 的資料庫為 <em>$dir/index.txt</em>，serial number 會放在 <em>$dir/derial</em> 中。因此先根據上述設定建立環境</p><pre tabindex=0><code class="language-bash=" data-lang="bash="># 把預設的 conf 檔從 /usr/lib/ssl/openssl.cnf 複製過來，重新命名成 myCA_openssl.cnf
+[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ cp /usr/lib/ssl/openssl.cnf myCA_openssl.cnf
+
+# 創建資料夾 demoCA
+[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ mkdir demoCA
+
+# 進到 demoCA
+[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ cd demoCA/
+
+# 再創建三個資料夾 certs, crl 和 newcerts
+[02/13/25]seed@VM:~/.../demoCA$ mkdir certs crl newcerts
+
+# 創建兩個空白檔案 index.txt 和 serial
+[02/13/25]seed@VM:~/.../demoCA$ touch index.txt serial
+
+# serial 裡面要放 serial number，假設放 1000
+[02/13/25]seed@VM:~/.../demoCA$ echo 1000 &gt; serial
+</code></pre><p>又因為這個 lab 可能會對同一個 subject 創建很多次憑證，所以需要特別把 <code>#unique_subject = no</code> 這行取消註解</p><pre tabindex=0><code class="language-bash=" data-lang="bash="># 編輯 myCA_openssl.cnf，將 unique_subject = no 那行取消註解
+[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ vim myCA_openssl.cnf
+
+# 節錄 myCA_openssl.cnf 內容
+[ CA_default ]
+
+dir		= ./demoCA		# Where everything is kept
+certs		= $dir/certs		# Where the issued certs are kept
+crl_dir		= $dir/crl		# Where the issued crl are kept
+database	= $dir/index.txt	# database index file.
+unique_subject	= no			# Set to &#39;no&#39; to allow creation of
+					# several certs with same subject.
+new_certs_dir	= $dir/newcerts	# default place for new certs.
+
+certificate	= $dir/cacert.pem 	# The CA certificate
+serial		= $dir/serial 		# The current serial number
+crlnumber	= $dir/crlnumber	# the current crl number
+					# must be commented out to leave a V1 CRL
+crl		= $dir/crl.pem 	# The current CRL
+private_key	= $dir/private/cakey.pem# The private key
+
+x509_extensions	= usr_cert	# The extensions to add to the cert
+</code></pre><p>完成設定檔後，即可透過 <code>openssl</code> 指令產生憑證，又因為這個 lab 是假設為 root CA，因此簽出來的憑證會是自簽憑證，指令如下</p><pre tabindex=0><code class="language-bash=" data-lang="bash="># 使用以下指令產生憑證
+[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -keyout ca.key -out ca.crt -subj &#34;/CN=www.modelCA.com/O=Model CA LTD./C=US&#34; -passout pass:dees
+Generating a RSA private key
+....................................................................................................................................................................................................................++++
+.......................................++++
+writing new private key to &#39;ca.key&#39;
+-----
+</code></pre><table><thead><tr><th style=text-align:left>指令、參數</th><th style=text-align:left>說明</th></tr></thead><tbody><tr><td style=text-align:left><code>openssl req</code></td><td style=text-align:left>向 root CA 發送憑證簽署要求或自前憑證</td></tr><tr><td style=text-align:left><code>-x509</code></td><td style=text-align:left>告訴 OpenSSL 這是自簽憑證，而不是簽給別人</td></tr><tr><td style=text-align:left><code>-newkey rsa:4096</code></td><td style=text-align:left>產生一組大小為 4096 bits 用來簽署憑證的 RSA key-pair</td></tr><tr><td style=text-align:left><code>-sha256</code></td><td style=text-align:left>指定要用 sha256 簽署該憑證</td></tr><tr><td style=text-align:left><code>-days 3650</code></td><td style=text-align:left>設定有效日期為 3650 天</td></tr><tr><td style=text-align:left><code>-keyout ca.key</code></td><td style=text-align:left>CA private key 儲存於 <code>ca.key</code> 中</td></tr><tr><td style=text-align:left><code>-out ca.crt</code></td><td style=text-align:left>公鑰憑證 (public key certificate) 存放於 <code>ca.crt</code> 中</td></tr><tr><td style=text-align:left><code>-subj "/CN=www.modelCA.com/O=Model CA LTD./C=US"</code></td><td style=text-align:left>subject information<br><code>/CN</code>: Common Name<br><code>/O</code>: Organization<br><code>/C</code>: Country</td></tr><tr><td style=text-align:left><code>-passout pass:dees</code></td><td style=text-align:left>密碼，每次使用此 CA 為他人簽憑證時都需輸入一次</td></tr></tbody></table><p>可以透過以下指令查看憑證</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl x509 -in ca.crt -text -noout
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            74:cd:b2:fb:e0:15:b2:1f:12:e1:4a:41:39:8d:7b:31:26:9f:b8:44
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN = www.modelCA.com, O = Model CA LTD., C = US
+        Validity
+            Not Before: Feb 13 07:38:24 2025 GMT
+            Not After : Feb 11 07:38:24 2035 GMT
+        Subject: CN = www.modelCA.com, O = Model CA LTD., C = US
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (4096 bit)
+                Modulus:
+                    00:e4:6f:76:32:94:48:4d:c4:e1:18:23:d9:c7:cb:...
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier: 
+                A5:E9:74:99:52:6F:A3:D7:0E:8A:A6:C1:F6:E6:24:5B:BE:C6:A4:03
+            X509v3 Authority Key Identifier: 
+                keyid:A5:E9:74:99:52:6F:A3:D7:0E:8A:A6:C1:F6:E6:24:5B:BE:C6:A4:03
+
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+    Signature Algorithm: sha256WithRSAEncryption
+         03:e3:a7:4f:b2:e2:6b:df:66:f0:bc:32:1d:3d:c1:25:fb:e3:...
+</code></pre><table><thead><tr><th style=text-align:left>指令、參數</th><th style=text-align:left>說明</th></tr></thead><tbody><tr><td style=text-align:left><code>openssl x509</code></td><td style=text-align:left>告訴 OpenSSL 要解讀 X509 憑證</td></tr><tr><td style=text-align:left><code>-in ca.crt</code></td><td style=text-align:left>指定 input file</td></tr><tr><td style=text-align:left><code>-text</code></td><td style=text-align:left>以人類讀得懂的方式顯示該憑證的完整資訊<br>包含擁有者 (Subject) 資訊、發佈人資訊、驗證期限、公鑰資訊、簽章所用演算法等等</td></tr><tr><td style=text-align:left><code>-noout</code></td><td style=text-align:left>不要顯示 base64 編碼版本<br>如果沒加這行則會同時印出編碼版與文字版</td></tr></tbody></table><p>另外，可以透過以下指令查看私鑰</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl rsa -in ca.key -text -noout
+Enter pass phrase for ca.key:
+RSA Private-Key: (4096 bit, 2 primes)
+modulus:
+    00:e4:6f:76:32:94:48:4d:c4:e1:18:23:d9:c7:cb:...
+publicExponent: 65537 (0x10001)
+privateExponent:
+    00:84:df:d4:e7:fc:da:c5:e9:d4:68:ff:49:89:6e:...
+prime1:
+    00:f4:53:7e:98:01:5e:0d:f3:86:90:c1:4c:bd:5f:...
+prime2:
+    00:ef:59:98:f5:44:32:bf:8f:ad:43:8d:21:8a:e4:...
+exponent1:
+    0d:71:82:a7:ae:7b:94:5c:ef:ec:8b:16:43:dd:38:...
+exponent2:
+    00:80:cb:d3:f5:57:67:7f:91:8f:08:e4:af:02:10:...
+coefficient:
+    00:8f:2f:26:4b:4e:27:5f:bf:17:39:fe:e4:3f:1f:...
+</code></pre><table><thead><tr><th style=text-align:left>指令、參數</th><th style=text-align:left>說明</th></tr></thead><tbody><tr><td style=text-align:left><code>openssl rsa</code></td><td style=text-align:left>告訴 OpenSSL 要做與 RSA 私鑰相關的事情</td></tr><tr><td style=text-align:left><code>-in ca.key</code></td><td style=text-align:left>指定 input file</td></tr><tr><td style=text-align:left><code>-text</code></td><td style=text-align:left>以人類讀得懂的方式顯示該憑證的完整資訊<br>包含私鑰組成以及公鑰推導等等</td></tr><tr><td style=text-align:left><code>-noout</code></td><td style=text-align:left>不要顯示 base64 編碼版本<br>如果沒加這行則會同時印出編碼版與文字版</td></tr></tbody></table><ol><li>What part of the certificate indicates this is a CA’s certificate?<blockquote><p>CA:TRUE</p></blockquote></li><li>What part of the certificate indicates this is a self-signed certificate?<blockquote><p>Issuer 與 Subject 皆相同</p></blockquote></li><li>In the RSA algorithm, we have a public exponent e, a private exponent d, a modulus n, and two secret numbers p and q, such that n = pq. Please identify the values for these elements in your certificate and key files.<table><thead><tr><th style=text-align:left>參數</th><th style=text-align:left>值</th></tr></thead><tbody><tr><td style=text-align:left>e</td><td style=text-align:left><em>ca.crt</em> 中的 <code>Exponent</code><br><em>ca.key</em> 中的 <code>publicExponent</code></td></tr><tr><td style=text-align:left>d</td><td style=text-align:left><em>ca.key</em> 中的 <code>privateExponent</code></td></tr><tr><td style=text-align:left>n</td><td style=text-align:left><em>ca.crt</em> 中的 <code>Modulus</code><br>ca.key 中的 <code>Modulus</code></td></tr><tr><td style=text-align:left>p</td><td style=text-align:left><em>ca.key</em> 中的 <code>prime1</code></td></tr><tr><td style=text-align:left>q</td><td style=text-align:left><em>ca.key</em> 中的 <code>prime2</code></td></tr></tbody></table></li></ol><h3 class="relative group">Task 2: Generating a Certificate Request for Your Web Server<div id=task-2-generating-a-certificate-request-for-your-web-server class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#task-2-generating-a-certificate-request-for-your-web-server aria-label=Anchor>#</a></span></h3><p>接下來要幫一間叫做 bank32.com 的公司簽憑證，流程是 bank32.com 發送一個憑證簽署請求 (Certificate Signing Request, CSR)，CSR 會被送到 CA 那邊，再由 CA 驗證提交的身分資訊是否正確，最後產生憑證。在 Task 2 中，會模擬 bank32.com 發送 CSR 至 CA 端</p><p>與 Task 1 十分類似，只是這次不需要加上 <code>-x509</code>，因為這次不是自簽憑證</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl req -newkey rsa:2048 -sha256 -keyout server.key -out server.csr -subj &#34;/CN=www.bank32.com/O=Bank32 Inc./C=US&#34; -passout pass:dees
+Generating a RSA private key
+.....................................................................+++++
+......................+++++
+writing new private key to &#39;server.key&#39;
+-----
+</code></pre><p>查看一下 CSR</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl req -in server.csr -text -noout
+Certificate Request:
+    Data:
+        Version: 1 (0x0)
+        Subject: CN = www.bank32.com, O = Bank32 Inc., C = US
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:c9:fc:7a:a2:0e:c3:f8:a1:4c:b6:ee:1c:c9:07:...
+                Exponent: 65537 (0x10001)
+        Attributes:
+            a0:00
+    Signature Algorithm: sha256WithRSAEncryption
+         28:78:1e:30:e9:ff:21:48:6a:cb:26:4c:d0:98:ca:48:9a:38:...
+</code></pre><p>不過現今很多網站會有不同的 URL，但都可以連到同一個伺服器，這是因為瀏覽器的 hostname matching policy，可以透過 X509 的延伸套件 (extension) <strong>Subject Alternative Name (SAN)</strong> 幫主機指定不同 URL 別名，如此提交的 CSR 就會告訴 CA 這些別名都可以使用</p><p>這邊要透過指令 <code>-addext "subjectAltName = DNS:&lt;URL>"</code> 做到，不過需要注意 <code>subjectAltName</code> 中還是必須包含 common name (CN)，否則 CN 會變成 invalid name</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl req -newkey rsa:2048 -sha256 -keyout server.key -out server.csr -subj &#34;/CN=www.bank32.com/O=Bank32 Inc./C=US&#34; -passout pass:dees -addext &#34;subjectAltName = DNS:www.bank32.com, DNS:www.bank32A.com, DNS:www.bank32B.com&#34;
+Generating a RSA private key
+.................+++++
+....+++++
+writing new private key to &#39;server.key&#39;
+-----
+</code></pre><p>查看一下更新後的 CSR，就看到有多一段 <code>Requested Extension</code> 指出 URL alias</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl req -in server.csr -text -noout
+Certificate Request:
+    Data:
+        Version: 1 (0x0)
+        Subject: CN = www.bank32.com, O = Bank32 Inc., C = US
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:ec:2a:5a:ac:70:e0:f6:99:20:e0:22:17:cd:f7:...
+                Exponent: 65537 (0x10001)
+        Attributes:
+        Requested Extensions:
+            X509v3 Subject Alternative Name: 
+                DNS:www.bank32.com, DNS:www.bank32A.com, DNS:www.bank32B.com
+    Signature Algorithm: sha256WithRSAEncryption
+         20:ae:80:70:aa:ad:e5:b7:23:62:2f:c8:c5:04:60:34:37:44:...
+</code></pre><h3 class="relative group">Task 3: Generating a Certificate for your server<div id=task-3-generating-a-certificate-for-your-server class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#task-3-generating-a-certificate-for-your-server aria-label=Anchor>#</a></span></h3><p>延續 Task 2，在 Task 3 中，要扮演回 CA 的角色，拿著 CSR 幫助 bank32.com 產生憑證。</p><p>要注意的是，因為安全性的考量，OpenSSL 預設不讓 <code>openssl ca</code> 從 request 中複製 extension field 至最終的憑證，但這次先把這個預設打開，從 <em>myCA_openssl.cnf</em> 中取消註解 <code># copy_extensions = copy</code></p><pre tabindex=0><code class="language-bash=" data-lang="bash="># 編輯 myCA_openssl.cnf，將 copy_extensions = copy 那行取消註解
+[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ vim myCA_openssl.cnf
+
+# 節錄 myCA_openssl.cnf 內容
+[ CA_default ]
+
+dir		= ./demoCA		# Where everything is kept
+certs		= $dir/certs		# Where the issued certs are kept
+crl_dir		= $dir/crl		# Where the issued crl are kept
+database	= $dir/index.txt	# database index file.
+unique_subject	= no			# Set to &#39;no&#39; to allow creation of
+					# several certs with same subject.
+new_certs_dir	= $dir/newcerts		# default place for new certs.
+
+certificate	= $dir/cacert.pem 	# The CA certificate
+serial		= $dir/serial 		# The current serial number
+crlnumber	= $dir/crlnumber	# the current crl number
+					# must be commented out to leave a V1 CRL
+crl		= $dir/crl.pem 		# The current CRL
+private_key	= $dir/private/cakey.pem# The private key
+
+x509_extensions	= usr_cert		# The extensions to add to the cert
+
+# Comment out the following two lines for the &#34;traditional&#34;
+# (and highly broken) format.
+name_opt 	= ca_default		# Subject Name options
+cert_opt 	= ca_default		# Certificate field options
+
+# Extension copying option: use with caution.
+copy_extensions = copy
+</code></pre><p>接著透過下面的指令產生憑證</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl ca -config myCA_openssl.cnf -policy policy_anything -md sha256 -days 3650 -in server.csr -out server.crt -batch -cert ca.crt -keyfile ca.key
+Using configuration from myCA_openssl.cnf
+Enter pass phrase for ca.key:
+Check that the request matches the signature
+Signature ok
+Certificate Details:
+        Serial Number: 4096 (0x1000)
+        Validity
+            Not Before: Feb 13 09:25:04 2025 GMT
+            Not After : Feb 11 09:25:04 2035 GMT
+        Subject:
+            countryName               = US
+            organizationName          = Bank32 Inc.
+            commonName                = www.bank32.com
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                A7:DB:BB:3C:41:57:FD:0F:32:07:B5:25:71:5C:C1:C4:C6:CE:CF:D5
+            X509v3 Authority Key Identifier: 
+                keyid:A5:E9:74:99:52:6F:A3:D7:0E:8A:A6:C1:F6:E6:24:5B:BE:C6:A4:03
+
+            X509v3 Subject Alternative Name: 
+                DNS:www.bank32.com, DNS:www.bank32A.com, DNS:www.bank32B.com
+Certificate is to be certified until Feb 11 09:25:04 2035 GMT (3650 days)
+
+Write out database with 1 new entries
+Data Base Updated
+</code></pre><table><thead><tr><th style=text-align:left>指令、參數</th><th style=text-align:left>說明</th></tr></thead><tbody><tr><td style=text-align:left><code>openssl ca</code></td><td style=text-align:left>告訴 OpenSSL 現在要簽核一張 CSR</td></tr><tr><td style=text-align:left><code>-config myCA_openssl.cnf</code></td><td style=text-align:left>告訴 OpenSSL 使用 <em>myCA_openssl.cnf</em> 這個設定檔</td></tr><tr><td style=text-align:left><code>-policy policy_anything</code></td><td style=text-align:left>指定憑證使用的政策<br><code>policy_anything</code> 在 <em>myCA_openssl.cnf</em> 中有提及</td></tr><tr><td style=text-align:left><code>-md sha256</code></td><td style=text-align:left>使用 sha256 簽署憑證</td></tr><tr><td style=text-align:left><code>-days 3650</code></td><td style=text-align:left>設定有效日期為 3650 天</td></tr><tr><td style=text-align:left><code>-in server.csr</code></td><td style=text-align:left>指定 input CSR 為 <em>server.csr</em></td></tr><tr><td style=text-align:left><code>-out server.crt</code></td><td style=text-align:left>指定產出的憑證名為 <em>server.crt</em></td></tr><tr><td style=text-align:left><code>-batch</code></td><td style=text-align:left>執行 batch mode，這樣就不會中途停下來要求手動許可簽屬程序</td></tr><tr><td style=text-align:left><code>-cert ca.crt</code></td><td style=text-align:left>指定使用 CA 的憑證 <em>ca.crt</em> 簽署 CSR</td></tr><tr><td style=text-align:left><code>-keyfile ca.key</code></td><td style=text-align:left>使用 <em>ca.key</em> 作為 CA 的私鑰簽署 CSR</td></tr></tbody></table><p>確認簽署的憑證，應該包含 CSR 中指定的 DNS alias</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/13/25]seed@VM:~/.../SEEDLAB-PKI$ openssl x509 -in server.crt -text -noout
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 4096 (0x1000)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN = www.modelCA.com, O = Model CA LTD., C = US
+        Validity
+            Not Before: Feb 13 09:25:04 2025 GMT
+            Not After : Feb 11 09:25:04 2035 GMT
+        Subject: C = US, O = Bank32 Inc., CN = www.bank32.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+                Modulus:
+                    00:ec:2a:5a:ac:70:e0:f6:99:20:e0:22:17:cd:f7:...
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                A7:DB:BB:3C:41:57:FD:0F:32:07:B5:25:71:5C:C1:C4:C6:CE:CF:D5
+            X509v3 Authority Key Identifier: 
+                keyid:A5:E9:74:99:52:6F:A3:D7:0E:8A:A6:C1:F6:E6:24:5B:BE:C6:A4:03
+
+            X509v3 Subject Alternative Name: 
+                DNS:www.bank32.com, DNS:www.bank32A.com, DNS:www.bank32B.com
+    Signature Algorithm: sha256WithRSAEncryption
+         df:0b:02:78:52:d2:b8:9e:d7:23:56:1e:b5:11:81:ac:40:a6:...
+</code></pre><h3 class="relative group">Task 4: Deploying Certificate in an Apache-Based HTTPS Website<div id=task-4-deploying-certificate-in-an-apache-based-https-website class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#task-4-deploying-certificate-in-an-apache-based-https-website aria-label=Anchor>#</a></span></h3><p>Task 4 要實際將產生的憑證放入瀏覽器中，使其能夠辨識並使用 HTTPS 安全瀏覽信任的網頁。概念上來說，對於 CA 而言，需要將先前產生的憑證 <em>ca.crt</em> 提交給瀏覽器，跟瀏覽器說我相信這個 CA 簽出來的憑證；對 bank32 這間公司而言，瀏覽器會跟它要屬於它的憑證，即 <em>server.crt</em>，又因為 <em>server.crt</em> 是 CA 簽出來的，所以瀏覽器會相信，並讓用戶成功瀏覽 <a href=https://www.bank32.com target=_blank>https://www.bank32.com</a>
+網頁。</p><p>這個 task 會需要建置基於 HTTPS 的 apache server，Seed lab 已經將它安裝於 container，只需要根據先前 tasks 產生的內容作一些設定上的調整即可</p><p>第一個是要修改 apache server 的設定檔，位於 <em>image_www/bank32_apache_ssl.conf</em>，需要調整 bank32 的資訊，包含 SSLCertificateFile 會從 <em>/certs/server.crt</em> 抓，相似地，SSLCertificateKeyFile 會從 <em>/certs/server.key</em> 取得，結果如下：</p><pre tabindex=0><code>&lt;VirtualHost *:443&gt; 
+    DocumentRoot /var/www/bank32
+    ServerName www.bank32.com
+    ServerAlias www.bank32A.com
+    ServerAlias www.bank32B.com
+    ServerAlias www.bank32W.com
+    DirectoryIndex index.html
+    SSLEngine On 
+    SSLCertificateFile /certs/server.crt
+    SSLCertificateKeyFile /certs/server.key
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:80&gt; 
+    DocumentRoot /var/www/bank32
+    ServerName www.bank32.com
+    DirectoryIndex index_red.html
+&lt;/VirtualHost&gt;
+
+# Set the following gloal entry to suppress an annoying warning message
+ServerName localhost
+</code></pre><p>接著是 <em>Dockerfile</em>，建置 container 時要把 <em>server.crt</em> 和 <em>server.key</em> 複製到 container 的 <em>/certs/</em> 中</p><pre tabindex=0><code>FROM handsonsecurity/seed-server:apache-php
+
+ARG WWWDIR=/var/www/bank32
+
+COPY ./index.html ./index_red.html $WWWDIR/
+COPY ./bank32_apache_ssl.conf /etc/apache2/sites-available
+COPY ./certs/server.crt ./certs/server.key  /certs/
+
+RUN  chmod 400 /certs/server.key \
+     &amp;&amp; chmod 644 $WWWDIR/index.html \
+     &amp;&amp; chmod 644 $WWWDIR/index_red.html \
+     &amp;&amp; asenmod ssl \
+     &amp;&amp; a2ensite bank32_apache_ssl   
+
+CMD  tail -f /dev/null
+</code></pre><p>根據上面調整的內容，把 <em>server.crt</em> 以及 <em>server.key</em> 移到 <em>image_www/certs/</em> 中</p><p>使用 <code>dcbuild</code> 建置環境，並以 <code>dcup</code> 將 container 啟動</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ dcbuild
+Building web-server
+Step 1/7 : FROM handsonsecurity/seed-server:apache-php
+ ---&gt; 2365d0ed3ad9
+Step 2/7 : ARG WWWDIR=/var/www/bank32
+ ---&gt; Using cache
+ ---&gt; 16a0763ac43d
+Step 3/7 : COPY ./index.html ./index_red.html $WWWDIR/
+ ---&gt; Using cache
+ ---&gt; 718a24968c38
+Step 4/7 : COPY ./bank32_apache_ssl.conf /etc/apache2/sites-available
+ ---&gt; Using cache
+ ---&gt; 844a04cc06cf
+Step 5/7 : COPY ./certs/server.crt ./certs/server.key  /certs/
+ ---&gt; d81c4562174e
+Step 6/7 : RUN  chmod 400 /certs/server.key      &amp;&amp; chmod 644 $WWWDIR/index.html      &amp;&amp; chmod 644 $WWWDIR/index_red.html      &amp;&amp; a2ensite bank32_apache_ssl
+ ---&gt; Running in 6e1c1867ea71
+Enabling site bank32_apache_ssl.
+To activate the new configuration, you need to run:
+  service apache2 reload
+Removing intermediate container 6e1c1867ea71
+ ---&gt; 7ed73be4cc19
+Step 7/7 : CMD  tail -f /dev/null
+ ---&gt; Running in a8c9a1796b6f
+Removing intermediate container a8c9a1796b6f
+ ---&gt; 362809e7726b
+
+Successfully built 362809e7726b
+Successfully tagged seed-image-www-pki:latest
+[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ dcup -d
+Creating network &#34;net-10.9.0.0&#34; with the default driver
+Creating www-10.9.0.80 ... done
+</code></pre><p>透過 <code>dockps</code> 可查看 container ID，以 <code>docksh &lt;id></code> 連線進去</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ dockps
+0cc4d835efca  www-10.9.0.80
+[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ docksh 0c
+root@0cc4d835efca:/#
+</code></pre><p>進到 container 後，要開啟 apache service，使用指令 <code>service apache2 start</code>，它會要求輸入 <em>server.key</em> 的密碼，密碼為 <code>dees</code></p><pre tabindex=0><code class="language-bash=" data-lang="bash=">root@0cc4d835efca:/# service apache2 start
+ * Starting Apache httpd web server apache2                                 Enter passphrase for SSL/TLS keys for www.bank32.com:443 (RSA):
+ * 
+root@0cc4d835efca:/#
+</code></pre><p>打開 firefox 瀏覽器，嘗試連線 <a href=https://www.bank32.com target=_blank>https://www.bank32.com</a>
+，會發現還是無法連線，這是因為我們還沒告知瀏覽器我們的 CA 是可以信任的
+<img src=task4-1.png alt=Task4-1 width=100%></p><p>在網址列輸入 <code>about:preferences#private</code>，找到憑證的區域，點擊 View Certificate
+<img src=task4-2.png alt=Task4-2 width=100%></p><p>在 Authorities 標籤內，點擊 Import
+<img src=task4-3.png alt=Task4-3 width=60%></p><p>匯入 <em>ca.crt</em> 這張憑證
+<img src=task4-4.png alt=Task4-4 width=60%></p><p>這邊要選擇 &ldquo;Trust this CA to identify websites&rdquo;，這樣瀏覽器就會信任這個 CA 所頒發的憑證的網站
+<img src=task4-5.png alt=Task4-5 width=60%></p><p>重新瀏覽 <a href=https://www.bank32.com target=_blank>https://www.bank32.com</a>
+，看到綠色的 Hello World 代表成功連線
+<img src=task4-6.png alt=Task4-6 width=100%></p><h3 class="relative group">Task 5: Launching a Man-In-The-Middle Attack<div id=task-5-launching-a-man-in-the-middle-attack class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#task-5-launching-a-man-in-the-middle-attack aria-label=Anchor>#</a></span></h3><p>Task 5 會說明 PKI 可以阻擋中間人攻擊，先簡單說明這個 Task 的攻擊場景：接下來有三個人物：用戶 (Alice)、中間人 (MITM)、伺服器 (server)，Alice 打算使用 server 的服務，MITM 打算從中作梗，讓 Alice 存取的服務有問題，在這個 task 中，假設 server 是師大資工 <a href=https://www.csie.ntnu.edu.tw target=_blank>www.csie.ntnu.edu.tw</a>
+，Alice 想要瀏覽該網頁，而中間人（也就是自己）打算將該網站導到別的地方，如果成功導向其他地方，那代表 MITM 攻擊成功，否則表示 PKI 成功阻擋了 MITM 攻擊。</p><p>接著要思考如何進行攻擊，有兩個方法可以做到，一個是直接攻擊路由，另一個方法是攻擊 DNS，這個 task 中會以後者作為範例。假設中間人有方法修改 Alice 本機上的 <em>/etc/hosts</em>（VM 上的 <em>/etc/hosts/</em>），並新增 <code>10.9.0.80 www.csie.ntnu.edu.tw</code>，如此當 Alice 瀏覽 <a href=https://www.csie.ntnu.edu.tw target=_blank>https://www.csie.ntnu.edu.tw</a>
+時，就會被導到 10.9.0.80，也就是 MITM 自架的服務</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ sudo vim /etc/hosts
+
+10.9.0.80 www.csie.ntnu.edu.tw
+</code></pre><p>打開 firefox 瀏覽器，嘗試連線 <a href=https://www.csie.ntnu.edu.tw target=_blank>https://www.csie.ntnu.edu.tw</a>
+，會發現並沒有如 Task 4 一樣顯示綠色的 Hello World 頁面，表示 PKI 有成功擋下 MITM 攻擊
+<img src=task5-1.png alt=Task5-1 width=100%></p><p>進到 Task 6 之前稍微說明一下原因：原因就是因為 <a href=https://www.csie.ntnu.edu.tw target=_blank>https://www.csie.ntnu.edu.tw</a>
+並無法提交合格的憑證，所以 PKI 將它擋了下來</p><h3 class="relative group">Task 6: Launching a Man-In-The-Middle Attack with a Compromised CA<div id=task-6-launching-a-man-in-the-middle-attack-with-a-compromised-ca class=anchor></div><span class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100"><a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700 !no-underline" href=#task-6-launching-a-man-in-the-middle-attack-with-a-compromised-ca aria-label=Anchor>#</a></span></h3><p>Task 6 就是要幫假服務偽造假憑證，使 MITM 攻擊成功，過程基本上就是仿造 Task 1-4</p><p>首先建立向 CA 發出憑證簽署要求的 CSR (<em>ntnu.csr</em>) 及私鑰 (<em>ntnu.key</em>)，再讓 CA 簽署該 CSR，產生憑證 <em>ntnu.crt</em></p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ openssl req -newkey rsa:2048 -sha256 -keyout ntnu.key -out ntnu.csr -subj &#34;/CN=www.csie.ntnu.edu.tw/O=NTNU CSIE/C=TW&#34; -passout pass:dees
+Generating a RSA private key
+..........................................................................................+++++
+.............................................................................................................................................................................+++++
+writing new private key to &#39;ntnu.key&#39;
+-----
+[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ openssl ca -config myCA_openssl.cnf -policy policy_anything -md sha256 -days 3650 -in ntnu.csr -out ntnu.crt -batch -cert ca.crt -keyfile ca.key
+Using configuration from myCA_openssl.cnf
+Enter pass phrase for ca.key:
+Check that the request matches the signature
+Signature ok
+Certificate Details:
+        Serial Number: 4097 (0x1001)
+        Validity
+            Not Before: Feb 14 15:08:24 2025 GMT
+            Not After : Feb 12 15:08:24 2035 GMT
+        Subject:
+            countryName               = TW
+            organizationName          = NTNU CSIE
+            commonName                = www.csie.ntnu.edu.tw
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                53:48:8B:B3:ED:7F:8C:1E:19:7C:FA:84:F7:05:BC:59:69:6E:3F:51
+            X509v3 Authority Key Identifier: 
+                keyid:D6:9E:DC:28:B8:0B:6E:67:00:F1:F3:C2:83:AC:7C:66:89:AC:D4:FF
+
+Certificate is to be certified until Feb 12 15:08:24 2035 GMT (3650 days)
+
+Write out database with 1 new entries
+Data Base Updated
+</code></pre><p>接著修改 container 設定，Dockerfile 設定如下</p><pre tabindex=0><code>FROM handsonsecurity/seed-server:apache-php
+
+ARG WWWDIR=/var/www/bank32
+
+COPY ./index.html ./index_red.html $WWWDIR/
+COPY ./bank32_apache_ssl.conf /etc/apache2/sites-available
+COPY ./ntnu_apache_ssl.conf /etc/apache2/sites-available
+COPY ./certs/server.crt ./certs/server.key  /certs/
+COPY ./certs/ntnu.crt ./certs/ntnu.key  /certs/
+
+RUN  chmod 400 /certs/server.key \
+     &amp;&amp; chmod 400 /certs/ntnu.key \
+     &amp;&amp; chmod 644 $WWWDIR/index.html \
+     &amp;&amp; chmod 644 $WWWDIR/index_red.html \
+     &amp;&amp; a2enmod ssl \
+     &amp;&amp; a2ensite bank32_apache_ssl \
+     &amp;&amp; a2ensite ntnu_apache_ssl   
+
+CMD  tail -f /dev/null
+</code></pre><p>apache server 也要新增 <a href=https://www.csie.ntnu.edu.tw target=_blank>https://www.csie.ntnu.edu.tw</a></p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/14/25]seed@VM:~/.../image_www$ cp bank32_apache_ssl.conf ntnu_apache_ssl.conf
+[02/14/25]seed@VM:~/.../image_www$ vim ntnu_apache_ssl.conf 
+</code></pre><p><em>ntnu_apache_ssl.conf</em> 設定如下</p><pre tabindex=0><code>&lt;VirtualHost *:443&gt; 
+    DocumentRoot /var/www/bank32
+    ServerName www.csie.ntnu.edu.tw
+    DirectoryIndex index.html
+    SSLEngine On 
+    SSLCertificateFile /certs/ntnu.crt
+    SSLCertificateKeyFile /certs/ntnu.key
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost *:80&gt; 
+    DocumentRoot /var/www/bank32
+    ServerName www.csie.ntnu.edu.tw
+    DirectoryIndex index_red.html
+&lt;/VirtualHost&gt;
+
+# Set the following gloal entry to suppress an annoying warning message
+ServerName localhost
+</code></pre><p>一樣根據 Dockerfile 的設定，將 <em>ntnu.crt</em>、<em>ntnu.key</em> 複製到 <em>image_www/certs</em> 中</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ cp ntnu.crt ntnu.key ./image_www/certs/
+</code></pre><p>最後 <code>dcbuild</code> 建置 container，<code>dcup</code> 啟動</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ dcbuild
+Building web-server
+Step 1/9 : FROM handsonsecurity/seed-server:apache-php
+ ---&gt; 2365d0ed3ad9
+Step 2/9 : ARG WWWDIR=/var/www/bank32
+ ---&gt; Using cache
+ ---&gt; 16a0763ac43d
+Step 3/9 : COPY ./index.html ./index_red.html $WWWDIR/
+ ---&gt; Using cache
+ ---&gt; 718a24968c38
+Step 4/9 : COPY ./bank32_apache_ssl.conf /etc/apache2/sites-available
+ ---&gt; Using cache
+ ---&gt; 844a04cc06cf
+Step 5/9 : COPY ./ntnu_apache_ssl.conf /etc/apache2/sites-available
+ ---&gt; 4f12dd172ab3
+Step 6/9 : COPY ./certs/server.crt ./certs/server.key  /certs/
+ ---&gt; 72f13efc4133
+Step 7/9 : COPY ./certs/ntnu.crt ./certs/ntnu.key  /certs/
+ ---&gt; cff8cc3d7e59
+Step 8/9 : RUN  chmod 400 /certs/server.key      &amp;&amp; chmod 400 /certs/ntnu.key      &amp;&amp; chmod 644 $WWWDIR/index.html      &amp;&amp; chmod 644 $WWWDIR/index_red.html      &amp;&amp; a2ensite bank32_apache_ssl      &amp;&amp; a2ensite ntnu_apache_ssl
+ ---&gt; Running in baafc9959d27
+Enabling site bank32_apache_ssl.
+To activate the new configuration, you need to run:
+  service apache2 reload
+Enabling site ntnu_apache_ssl.
+To activate the new configuration, you need to run:
+  service apache2 reload
+Removing intermediate container baafc9959d27
+ ---&gt; b781c9decb84
+Step 9/9 : CMD  tail -f /dev/null
+ ---&gt; Running in afe500be0d41
+Removing intermediate container afe500be0d41
+ ---&gt; a79c3a37a3b6
+
+Successfully built a79c3a37a3b6
+Successfully tagged seed-image-www-pki:latest
+[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ dcup -d
+Creating network &#34;net-10.9.0.0&#34; with the default driver
+Creating www-10.9.0.80 ... done
+</code></pre><p><code>docksh &lt;id></code> 連進 container 後，使用指令 <code>service apache2 start</code> 啟用 apache 服務</p><pre tabindex=0><code class="language-bash=" data-lang="bash=">[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ dockps
+5b31c4d5ea6f  www-10.9.0.80
+[02/14/25]seed@VM:~/.../SEEDLAB-PKI$ docksh 5b
+root@5b31c4d5ea6f:/# service apache2 start
+ * Starting Apache httpd web server apache2                                                                                                                                                                Enter passphrase for SSL/TLS keys for www.csie.ntnu.edu.tw:443 (RSA):
+ * 
+root@5b31c4d5ea6f:/#
+</code></pre><p>重新瀏覽 <a href=https://www.csie.ntnu.edu.tw target=_blank>https://www.csie.ntnu.edu.tw</a>
+，發現成功顯示 Hello World 頁面，表示 MITM 攻擊成功
+<img src=task6-1.png alt=Task6-1 width=100%></p></section><footer class=pt-8></footer></article><div id=top-scroller class="pointer-events-none absolute top-[110vh] bottom-0 w-12 ltr:right-0 rtl:left-0"><a href=#the-top class="pointer-events-auto sticky top-[calc(100vh-5.5rem)] flex h-12 w-12 mb-16 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400" aria-label="Scroll to top" title="Scroll to top">&uarr;</a></div></main><footer id=site-footer class="py-10 print:hidden"><div class="flex items-center justify-between"><p class="text-sm text-neutral-500 dark:text-neutral-400">&copy;
+2025
+Luke</p><p class="text-xs text-neutral-500 dark:text-neutral-400">Powered by <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://gohugo.io/ target=_blank rel="noopener noreferrer">Hugo</a> & <a class="hover:underline hover:decoration-primary-400 hover:text-primary-500" href=https://blowfish.page/ target=_blank rel="noopener noreferrer">Blowfish</a></p></div><script>mediumZoom(document.querySelectorAll("img:not(.nozoom)"),{margin:24,background:"rgba(0,0,0,0.5)",scrollOffset:0})</script><script type=text/javascript src=/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh+sCQ0E53ghYrxgYqw+0GCRyIEpA=="></script></footer><div id=search-wrapper class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-index-500" data-url=/><div id=search-modal class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800"><header class="relative z-10 flex items-center justify-between flex-none px-2"><form class="flex items-center flex-auto min-w-0"><div class="flex items-center justify-center w-8 h-8 text-neutral-400"><span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9.0 208 0S0 93.1.0 208s93.1 208 208 208c48.3.0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9.0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7.0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7.0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg></span></div><input type=search id=search-query class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent" placeholder=Search tabindex=0></form><button id=close-search-button class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400" title="Close (Esc)">
+<span class="relative block icon"><svg viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75.0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3 54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75.0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75.0-45.25s32.75-12.5 45.25.0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25.0s12.5 32.75.0 45.25l-105.4 105.4L310.6 361.4z"/></svg></span></button></header><section class="flex-auto px-2 overflow-auto"><ul id=search-results></ul></section></div></div></div></body></html>
