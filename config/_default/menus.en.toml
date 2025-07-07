@@ -35,6 +35,12 @@
   pageRef = "tags"
   weight = 50
 
+[[main]]
+  pre = "rss"
+  name = "RSS"
+  url = "https://april-aries.github.io/posts/index.xml"
+  weight = 60
+
 # -- Footer Menu --
 # The footer menu is displayed at the bottom of the page, just before
 # the copyright notice. Configure as per the main menu above.
