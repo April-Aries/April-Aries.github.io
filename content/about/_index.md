@@ -1,7 +1,7 @@
 ---
 title: "About Me"
 date: "2025-07-06"
-layout: "single"
+layout: "about"
 ---
 
 歡迎來到這個小世界，我是 Luke，常用的 ID 除了 Luke 還有 April Aries 或它的簡寫 AA，因為我是一隻四月誕生的牡羊，四年前進資工系覺得大家都有自己的 ID 很酷，但要自己想卻想不到第一時間就適合且喜歡的，所以 AA 就一直使用到現在了
