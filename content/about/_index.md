@@ -77,6 +77,7 @@ layout: "about"
 {{< timeline >}}
 
 {{< timelineItem icon="tag" header="壢中小大學 校友分享" badge="資工" subheader="2025.05.28" >}}
+    {{< article link="/posts/clhs-cs/" >}}
 {{< /timelineItem >}}
 
 {{< timelineItem icon="tag" header="理學院實習成果發表會" badge="實習" subheader="2024.11.21" >}}
