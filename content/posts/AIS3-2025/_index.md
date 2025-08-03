@@ -5,6 +5,10 @@ description: '2025 AIS3 新型態暑期資安實務課程 專題'
 layout: "single"
 summary: '2025 AIS3 新型態暑期資安實務課程 專題'
 tags: ["資安"]
+authors:
+  - "kaikai"
+  - "Elliot_404"
+  - "wtt"
 ---
 
 ## 動機
@@ -88,7 +92,9 @@ tags: ["資安"]
 
 ### 系統架構
 
-接下來會依序介紹這五天我們設計的四個版本
+接下來會依序介紹這五天我們設計的四個版本，順便把 GitHub 連結放在這邊供參
+
+{{< github repo="april-aries/ais3-2025-project" showThumbnail=true >}}
 
 #### v0. 零防禦
 
@@ -181,6 +187,25 @@ Flowise 的 RAG 文本創建會經過三個步驟
     是一個 database，會儲存每個 RAG 文本的 hash，避免 RAG 文本重複
     > 我們使用 Postgres record manager
 
+我們利用 OpenAI Embedding Text-embedding-ada-002 將 QA 集進行 embedding 後，ada-002 embed 出來的的向量維度是 1536，所以我們存入 Qdrant v1.14.1
+
+Qdrant 提供三種 similarity：Cosine Similarity, Euclidean Distance 以及 Dot Product Similarity
+
+| 特性 | Cosine Similarity | Euclidean Distance | Dot Product |
+| :-- | :-- | :-- | :-- |
+| 關注點 | 方向 | 方向 & 大小 | 方向 & 大小 |
+| 正規化 | 自帶正規化 | 無正規化 | 無正規化 |
+| 計算複雜度 | 中等 | 中等 | 最低 |
+| 適用場景 | 文本、稀疏資料 | 密集資料、聚類 | 快速相似度計算 |
+
+因為我們是要做RAG文本相似度測量，因此選擇Cosine similarity去做相似度測量。Euclidean Distance 的使用時機比較像是 K-means 聚類或地理位置；Dot Product Similarity 其實跟 Cosine Similarity 差不多，但是 cosine 會除以向量長度，dot product不會，如果像是我們這種長文本的相似度檢測使用 Cosine Similarity 會比較適合
+
+{{< figure
+    src="RAG_3steps.png"
+    alt="RAG 3 steps"
+    caption="RAG 文本創建三步驟"
+    >}}
+
 ### 測試腳本
 
 設計的最後談談使用的測試腳本，我們使用了三份測試腳本，總計 674 筆資料
@@ -268,6 +293,24 @@ Flowise 的 RAG 文本創建會經過三個步驟
 [3] deepset. Prompt injections dataset. https://huggingface.co/datasets/deepset/prompt-injections, 2024. Accessed: 2025-08-01.
 
 [4] rubend18. Chatgpt-jailbreak-prompts. https://huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts, 2023. Accessed: 2025-08-01.
+
+## 報告時的 QA
+
+> 專題重點是攻擊還是防禦
+
+攻防的過程中攻擊方與防禦方互相進步的流程
+
+> 資料集是否經過客製化調整
+
+除了合作廠商提供資料集有將語意調整為新竹相關以外，另外兩筆第三方 dataset 沒有經過調整
+
+> 如何說服廠商
+
+私
+
+> 有沒有已知系統的限制
+
+RAG 文本不完整，對於罕見資料 RAG 檢索不到、Google search 又搜尋不到時，可能就會繞過所有防線產生未知的回應
 
 ## 過程中的點點滴滴
 
