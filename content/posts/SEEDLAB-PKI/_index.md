@@ -3,7 +3,7 @@ title: 'Seed Lab PKI Writeup'
 description: 'Writeup of Seed Lab Public Key Infrastructure (PKI)'
 date: 2025-02-15
 tags: ["writeup"]
-layout: "simple"
+layout: "single"
 ---
 
 ## Motivation
