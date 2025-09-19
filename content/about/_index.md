@@ -76,6 +76,14 @@ layout: "about"
 
 {{< timeline >}}
 
+{{< timelineItem icon="tag" header="PASSION 遠距教學實習 學友分享" badge="PASSION" subheader="2025.09.01" >}}
+    {{< figure
+        src="PASSION-talk2025-cover.png"
+        alt="PASSION 2025"
+        caption="[簡報連結](https://www.canva.com/design/DAGwx-yR9xI/Gg2d8skPNUTDOpJuTaiGdw/edit?utm_content=DAGwx-yR9xI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)"
+    >}}
+{{< /timelineItem >}}
+
 {{< timelineItem icon="tag" header="壢中小大學 校友分享" badge="資工" subheader="2025.05.28" >}}
     {{< article link="/posts/clhs-cs/" >}}
 {{< /timelineItem >}}
