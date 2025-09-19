@@ -6,7 +6,7 @@ layout: "about"
 
 歡迎來到這個小世界，我是 Luke，常用的 ID 除了 Luke 還有 April Aries 或它的簡寫 AA，因為我是一隻四月誕生的牡羊，四年前進資工系覺得大家都有自己的 ID 很酷，但要自己想卻想不到第一時間就適合且喜歡的，所以 AA 就一直使用到現在了
 
-目前是**準**國立陽明交通大學資訊安全研究所學生，剛從國立臺灣師範大學資訊工程學系畢業，曾經修習半個教育學程和 PASSION 偏鄉優質教育學分學程，主要研究領域在資訊安全，對滲透感興趣但什麼都打不下來
+目前是國立陽明交通大學資訊安全研究所學生，自國立臺灣師範大學資訊工程學系畢業，曾經修習半個教育學程和 PASSION 偏鄉優質教育學分學程，主要研究領域在資訊安全，對滲透紅隊感興趣但什麼都打不下來
 
 這個網站會放上一些個人生活紀錄或競賽解題筆記。歡迎對我、對資安、對教育有興趣的人類們偶爾來看看
 
@@ -38,6 +38,12 @@ layout: "about"
 ## 教育經歷
 
 {{< timeline >}}
+
+{{< timelineItem icon="location-dot" header="114-1 PASSION 花蓮北區英語文扎根計畫 新城國小" badge="PASSION" subheader="2025.09 - now" >}}
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="114-1 PASSION 花蓮北區英語文扎根計畫 和平國小" badge="PASSION" subheader="2025.09 - now" >}}
+{{< /timelineItem >}}
 
 {{< timelineItem icon="location-dot" header="113-2 資安攻防演練 助教" badge="助教" subheader="2025.03 - 2025.06" >}}
 {{< /timelineItem >}}
