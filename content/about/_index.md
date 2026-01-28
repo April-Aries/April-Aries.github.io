@@ -82,6 +82,9 @@ layout: "about"
 
 {{< timeline >}}
 
+{{< timelineItem icon="tag" header="壢中電腦科學社 校友分享" badge="資工" subheader="2026.01.06" >}}
+{{< /timelineItem >}}
+
 {{< timelineItem icon="tag" header="PASSION 遠距教學實習 學友分享" badge="PASSION" subheader="2025.09.01" >}}
     {{< figure
         src="PASSION-talk2025-cover.png"
