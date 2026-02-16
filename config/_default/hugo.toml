@@ -31,6 +31,7 @@ googleAnalytics = "G-G7BTC5M58S"
   series = "series"
   about = "about"
   posts = "posts"
+  travelogue = "travelogue"
 
 [sitemap]
   changefreq = 'daily'
