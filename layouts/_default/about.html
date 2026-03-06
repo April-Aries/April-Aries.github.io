@@ -156,14 +156,17 @@
           {{ $lang := print "."  .Lang  ".md" }}
           {{ $path = replace $path $lang ".md" }}
         {{ end }}
-        {{ $jsPage := resources.Get "js/page.js" }}
-        {{ $jsPage = $jsPage | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
-        <script
-          type="text/javascript"
-          src="{{ $jsPage.RelPermalink }}"
-          integrity="{{ $jsPage.Data.Integrity }}"
-          data-oid="views_{{ $path }}"
-          data-oid-likes="likes_{{ $path }}"></script>
+        
+        {{ with resources.Get "js/page.js" }}
+          {{ $jsPage := . | resources.Minify | resources.Fingerprint ($.Site.Params.fingerprintAlgorithm | default "sha512") }}
+          <script
+            type="text/javascript"
+            src="{{ $jsPage.RelPermalink }}"
+            integrity="{{ $jsPage.Data.Integrity }}"
+            data-oid="views_{{ $path }}"
+            data-oid-likes="likes_{{ $path }}"></script>
+        {{ end }}
+        
       {{ end }}
 
     </section>
