@@ -6,7 +6,7 @@ layout: "about"
 
 歡迎來到這個小世界，我是 Luke，常用的 ID 除了 Luke 還有 April Aries 或它的簡寫 AA，因為我是一隻四月誕生的牡羊，四年前進資工系覺得大家都有自己的 ID 很酷，但要自己想卻想不到第一時間就適合且喜歡的，所以 AA 就一直使用到現在了
 
-目前是國立陽明交通大學資訊安全研究所學生，同時是 AIS3 好厲駭第十屆學員，自國立臺灣師範大學資訊工程學系畢業，曾經修習半個教育學程和 PASSION 偏鄉優質教育學分學程，主要研究領域在資訊安全，對滲透紅隊感興趣但什麼都打不下來
+目前是國立陽明交通大學資訊安全研究所學生，同時是 AIS3 好厲駭第十屆學員，自國立臺灣師範大學資訊工程學系畢業，曾經修習半個教育學程和 PASSION 偏鄉優質教育學分學程，主要研究領域在資訊安全，對滲透紅隊感興趣但什麼都打不下來，目前研究是 red team agent，非常歡迎感興趣的人找我交流！
 
 這個網站會放上一些個人生活紀錄或競賽解題筆記。歡迎對我、對資安、對教育有興趣的人類們偶爾來看看
 
@@ -39,10 +39,10 @@ layout: "about"
 
 {{< timeline >}}
 
-{{< timelineItem icon="location-dot" header="114-1 PASSION 花蓮北區英語文扎根計畫 新城國小" badge="PASSION" subheader="2025.09 - now" >}}
+{{< timelineItem icon="location-dot" header="114-1 PASSION 花蓮北區英語文扎根計畫 新城國小" badge="PASSION" subheader="2025.09 - 2026.06" >}}
 {{< /timelineItem >}}
 
-{{< timelineItem icon="location-dot" header="114-1 PASSION 花蓮北區英語文扎根計畫 和平國小" badge="PASSION" subheader="2025.09 - now" >}}
+{{< timelineItem icon="location-dot" header="114-1 PASSION 花蓮北區英語文扎根計畫 和平國小" badge="PASSION" subheader="2025.09 - 2026.06" >}}
 {{< /timelineItem >}}
 
 {{< timelineItem icon="location-dot" header="113-2 資安攻防演練 助教" badge="助教" subheader="2025.03 - 2025.06" >}}
@@ -65,6 +65,57 @@ layout: "about"
 
 {{< timelineItem icon="location-dot" header="數位學伴：臺中市東汴國小 [數學]" badge="數位學伴" subheader="2023.03 - 2023.06" >}}
 獲優良大學伴
+{{< /timelineItem >}}
+
+{{< /timeline >}}
+
+## 資安經歷
+
+{{< timeline >}}
+
+{{< timelineItem icon="location-dot" header="HITCON 2026" badge="conference" subheader="2026.08" >}}
+會眾
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="AIS3 2026" badge="AIS3" subheader="2026.07" >}}
+AI3 - AI 惡意程式逆向 - 當天火跌落凡塵：普羅米修斯混淆機制的完全破譯
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="UMDCTF 2026" badge="CTF" subheader="2026.04" >}}
+隊名：SpeedBambooFox
+成績：第 23 名
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="行政院網路攻防演練攻擊手" badge="attacker" subheader="2026.03 - 2026.09" >}}
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="DEVCORE CONFERENCE 2026" badge="conference" subheader="2026.03" >}}
+會眾
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="EOF CTF 資格賽" badge="AIS3" subheader="2026.01" >}}
+隊名：程安 wannacry
+第 27 名
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="AIS3 好厲駭導師培訓" badge="AIS3" subheader="2025.09 - 2026.07" >}}
+導師：Mico
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="中科院突破式國防科技研究計劃" badge="NCSIST" subheader="2025.09 - 2026.12" >}}
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="HITCON 2025" badge="conference" subheader="2025.08" >}}
+會眾
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="AIS3 2025" badge="AIS3" subheader="2025.07" >}}
+AI2 - 我只是餓了，怎麼變成 prompt injection 攻防戰？
+獲最佳專題
+{{< /timelineItem >}}
+
+{{< timelineItem icon="location-dot" header="CraftCon 2025" badge="conference" subheader="2025.07" >}}
+會眾
 {{< /timelineItem >}}
 
 {{< /timeline >}}
