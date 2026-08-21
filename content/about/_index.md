@@ -79,6 +79,7 @@ layout: "about"
 
 {{< timelineItem icon="location-dot" header="AIS3 2026" badge="AIS3" subheader="2026.07" >}}
 AI3 - AI 惡意程式逆向 - 當天火跌落凡塵：普羅米修斯混淆機制的完全破譯
+獲最佳專題
 {{< /timelineItem >}}
 
 {{< timelineItem icon="location-dot" header="UMDCTF 2026" badge="CTF" subheader="2026.04" >}}
